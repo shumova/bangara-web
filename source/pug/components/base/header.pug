@@ -2,20 +2,24 @@ mixin header(headerMods, currentUrl)
   - const isIndex = currentUrl == "index.html";
   -
     const params = {
-      decor: {
-          path: "content",
-          name: "header-bg",
-          format: "png",
-          width: "1555",
-          height: "362",
-      },
-      logo: {
+      logoOrigin: {
         isIndex,
         img: {
           path: "content/logo",
-          name: "logo-light",
+          name: "logo",
           format: "png",
-          width: "378",
+          width: "366",
+          height: "127",
+          altText: "Перейти на главную страницу"
+        }
+      },
+      logoSmall: {
+        isIndex,
+        img: {
+          path: "content/logo",
+          name: "logo-small",
+          format: "png",
+          width: "125",
           height: "92",
           altText: "Перейти на главную страницу"
         }
@@ -52,11 +56,10 @@ mixin header(headerMods, currentUrl)
     }
 
   header.header(class=headerMods, data-page-nav="container")
-    .header__decor
-      +picture(params.decor)
     .container
       .header__inner-wrapper
-        +logo(params.logo)
+        +logo(params.logoOrigin).logo--origin
+        +logo(params.logoSmall).logo--small
         +burger().header__toggle(data-page-nav="toggle")
         .header__nav(data-page-nav="content")
           +page-nav(params.pageNav)

@@ -1,0 +1,24 @@
+mixin agent-intro(props = {})
+  - const img = props.img
+  - const text = props.text
+
+  section.agent-intro
+    .container
+      .agent-intro__wrapper
+        .agent-intro__img
+          +picture({
+            path: "content/bangara",
+            name: img.name,
+            format: "jpg",
+            width: img.width,
+            height: img.height,
+            altText: img.alt
+          })
+
+        +title({
+          tag: "h1",
+          text: text.title
+        })
+        +text({
+          content: text.content
+        })

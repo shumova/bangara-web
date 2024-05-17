@@ -16,7 +16,7 @@ const compileStyles = () =>
       .pipe(
           postcss([
             autoprefixer({
-              grid: false,
+              grid: true,
             })]))
       .pipe(gulp.dest('build/css'))
       .pipe(csso())

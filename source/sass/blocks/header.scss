@@ -2,8 +2,9 @@
   --header-padding: #{$space-l};
 
   position: relative;
-  background-color: $color-base-project;
-  color: var(--color-typo-essential);
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
 
   @include vp-1023 {
     position: relative;
@@ -41,11 +42,11 @@
 
   &__inner-wrapper {
     padding: var(--header-padding) 0;
-    grid-template-columns: clamp(280px, 28vw, 380px) minmax(0, 1fr);
+    grid-template-columns: clamp(300px, 28vw, 360px) minmax(0, 1fr);
 
     @include vp-1023 {
       grid-template-columns: minmax(0, 1fr) 80px;
-      background-color: $color-base-project;
+      background-color: #ffffff;
     }
   }
 
@@ -57,23 +58,27 @@
     width: 100%;
     height: auto;
 
-    @include vp-767 {
-      width: clamp(215px, 40vw, 378px);
+    &--origin {
+      display: block;
+    }
+
+    &--small {
+      display: none;
+    }
+
+    @include vp-1023 {
+      width: clamp(215px, 40vw, 360px);
     }
 
     @include vp-374 {
-      position: relative;
-      width: 75px;
-      height: 75px;
+      width: clamp(50px, 30vw, 125px);
 
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: left;
+      &--origin {
+        display: none;
+      }
+
+      &--small {
+        display: block;
       }
     }
   }
@@ -108,7 +113,7 @@
       place-items: center;
       gap: 45px;
       padding: 50px clamp(10px, 5vw, 50px);
-      background-color: #3734a9;
+      background-color: #ffffff;
       font-size: 28px;
       transform: translateY(calc(-100% - var(--header-height)));
       transition: transform $trans-default, opacity $trans-default, visibility $trans-default;

@@ -10,6 +10,5 @@ mixin nav-list(props = {})
           tag: tag,
           href: link.href,
           text: link.text,
-          isActive,
-          modifiers: ["view-secondary"]
+          isActive
         }).nav-list__link(class=[isActive && "is-active"])

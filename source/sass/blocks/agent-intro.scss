@@ -1,0 +1,38 @@
+.agent-intro {
+  padding: 80px 0;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    float: right;
+    margin-left: 70px;
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+  }
+
+  .text {
+    margin-top: 50px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+
+    p + p {
+      margin-top: 30px;
+    }
+
+    @include vp-767 {
+      p + p {
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -8,7 +8,17 @@
 
   &__img {
     float: right;
-    margin-left: 70px;
+    max-width: 50%;
+    margin-left: clamp(30px, 4vw, 70px);
+    margin-bottom: 50px;
+
+    @include vp-767 {
+      display: grid;
+      place-items: center;
+      float: initial;
+      max-width: none;
+      margin-left: 0;
+    }
   }
 
   .title {

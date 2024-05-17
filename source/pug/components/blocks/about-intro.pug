@@ -1,0 +1,82 @@
+mixin about-intro(props = {})
+  section.about-intro
+    .about-intro__decor-container
+      .about-intro__decor
+        +picture({
+          path: "content/about-page",
+          name: "about-intro-decor",
+          format: "png",
+          width: "1372",
+          height: "533",
+        })(aria-hidden="true")
+    .container
+      .about-intro__wrapper
+        .about-intro__content
+          +title({
+            tag: "h1",
+            text: "Инновационное решение для автоматизации продаж финансовых продуктов в&nbsp;B2B сегменте &laquo;Бангара&raquo;"
+          }).about-intro__title
+          .about-intro__img.about-intro__img-left
+            +picture({
+              path: "content/about-page",
+              name: "intro-pic-2",
+              format: "png",
+              width: "341",
+              height: "261",
+            })(aria-hidden="true")
+          +button({
+            href: "#contacts",
+            text: "Вывести свой бизнес на&nbsp;новый уровень",
+            modifiers: ["color-black"]
+          }).about-intro__button
+          .about-intro__img.about-intro__img-right
+            +picture({
+              path: "content/about-page",
+              name: "intro-pic-1",
+              format: "png",
+              width: "390",
+              height: "255",
+            })(aria-hidden="true")
+        .about-intro__footer
+          .about-intro__footer-decor.about-intro__footer-decor--left
+            +picture({
+              path: "content/about-page",
+              name: "intro-decor",
+              format: "png",
+              width: "120",
+              height: "98",
+            })(aria-hidden="true")
+          ul.about-intro__list
+            li.about-intro__item
+              .about-intro__icon
+                +icon("icon-table", 48, 47)
+              +text({
+                content: [
+                  "Станьте частью единой универсальной платформы для ИТ-услуг"
+                ]
+              }).about-intro__text
+            li.about-intro__item
+              .about-intro__icon
+                +icon("icon-client", 48, 48)
+              +text({
+                content: [
+                  "Станьте ближе к&nbsp;поиску следующего клиента"
+                ]
+              }).about-intro__text
+            li.about-intro__item
+              .about-intro__icon
+                +icon("icon-graph", 41, 40)
+              +text({
+                content: [
+                  "Развивайте свой бизнес одним щелчком мыши"
+                ]
+              }).about-intro__text
+          .about-intro__footer-decor.about-intro__footer-decor--right
+            +picture({
+              path: "content/about-page",
+              name: "intro-decor",
+              format: "png",
+              width: "120",
+              height: "98",
+            })(aria-hidden="true")
+

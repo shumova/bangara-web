@@ -1,0 +1,34 @@
+.slider {
+  &__container {
+    padding: 40px 0 50px;
+    overflow: visible;
+  }
+
+  &__wrapper {
+    place-items: center;
+  }
+
+  .container {
+    display: grid;
+    place-items: center;
+  }
+
+  &__pagination {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #7837e6;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 44px;
+    height: 8px;
+    background: #9759bd;
+    border-radius: 4px;
+  }
+}

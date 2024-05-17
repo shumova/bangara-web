@@ -1,0 +1,8 @@
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, $space-2xl);
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}

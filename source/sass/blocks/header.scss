@@ -1,0 +1,150 @@
+.header {
+  --header-padding: #{$space-l};
+
+  position: relative;
+  background-color: $color-base-project;
+  color: var(--color-typo-essential);
+
+  @include vp-1023 {
+    position: relative;
+  }
+
+  &__decor {
+    --top-offset: 25px;
+    position: absolute;
+    top: calc(var(--top-offset) * -1);
+    left: 50%;
+    height: calc(100% + var(--top-offset));
+    overflow: hidden;
+    transform: translateX(-48%);
+
+    img {
+      max-width: none;
+      object-fit: cover;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__inner-wrapper,
+  &__nav {
+    display: grid;
+    gap: $space-2xl;
+    align-items: center;
+  }
+
+  &__inner-wrapper {
+    padding: var(--header-padding) 0;
+    grid-template-columns: clamp(280px, 28vw, 380px) minmax(0, 1fr);
+
+    @include vp-1023 {
+      grid-template-columns: minmax(0, 1fr) 80px;
+      background-color: $color-base-project;
+    }
+  }
+
+  &__nav {
+    grid-template-columns: minmax(0, 1fr) clamp(280px, 28vw, 380px);
+  }
+
+  .logo {
+    width: 100%;
+    height: auto;
+
+    @include vp-767 {
+      width: clamp(215px, 40vw, 378px);
+    }
+
+    @include vp-374 {
+      position: relative;
+      width: 75px;
+      height: 75px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+      }
+    }
+  }
+
+  .page-nav {
+    justify-self: center;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  @include vp-1023 {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .burger {
+      display: block;
+      scale: 1.8;
+    }
+
+    &__nav {
+      position: absolute;
+      z-index: -1;
+      top: 100%;
+      right: 0;
+      left: 0;
+      grid-template-columns: minmax(0, 1fr);
+      place-items: center;
+      gap: 45px;
+      padding: 50px clamp(10px, 5vw, 50px);
+      background-color: #3734a9;
+      font-size: 28px;
+      transform: translateY(calc(-100% - var(--header-height)));
+      transition: transform $trans-default, opacity $trans-default, visibility $trans-default;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.is-opened .header__nav {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-nav__list {
+      gap: 45px;
+    }
+
+    .user-menu {
+      display: grid;
+      gap: 45px;
+    }
+  }
+
+  @include vp-767 {
+    .burger {
+      scale: 1.2;
+    }
+
+    &__nav {
+      text-align: center;
+      gap: 45px;
+    }
+
+    .page-nav__list {
+      display: grid;
+      gap: 45px;
+    }
+  }
+}

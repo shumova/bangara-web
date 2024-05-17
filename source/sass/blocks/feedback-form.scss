@@ -1,0 +1,14 @@
+.feedback-form {
+  &__item {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 24px;
+  }
+}

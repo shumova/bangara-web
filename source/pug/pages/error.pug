@@ -1,0 +1,16 @@
+extends ../components/base/layout
+
+block variables
+  -
+    const
+          title = "ЦФР — IT решения для вашего бизнеса",
+          wrapperMods = "",
+          hasHeader = false,
+          headerMods = "",
+          hasFooter = false,
+          footerMods = "",
+          currentUrl = "error.html"
+
+block main
+  main
+    +in-work()

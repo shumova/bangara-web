@@ -1,0 +1,88 @@
+.opportunity-card {
+  display: grid;
+  border-radius: 4px;
+  transition: outline $trans-default;
+  border: 1px solid rgba(27, 27, 27, 0.15);
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  overflow: hidden;
+
+  &:hover {
+    outline: 2px solid #308fff;
+
+    .opportunity-card__decor {
+      transform: scale(1.2);
+    }
+  }
+
+  &__decor,
+  &__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__decor {
+    position: relative;
+    transition: transform $trans-default;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    padding: 24px 24px 36px;
+  }
+
+  &__img {
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+      border-radius: 4px;
+    }
+  }
+
+  .title {
+    display: block;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.35;
+    letter-spacing: 0.25px;
+    color: #1B1B1B;
+    overflow-wrap: anywhere;
+
+    @include vp-767 {
+      font-size: 30px;
+    }
+  }
+
+  .text {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #1B1B1B;
+  }
+
+  .link {
+    align-self: end;
+    justify-self: left;
+    margin-top: 28px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.75px;
+  }
+}

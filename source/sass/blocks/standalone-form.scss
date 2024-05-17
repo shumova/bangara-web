@@ -1,0 +1,50 @@
+.standalone-form {
+  --form-border-radius: 60px;
+
+  padding: 10px 15px;
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
+  border-radius: var(--form-border-radius);
+
+  @include vp-767 {
+    --form-border-radius: 20px;
+
+    padding: 25px 15px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 15px;
+
+    @include vp-767 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  input {
+    padding: 15px 20px;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+      font-size: 18px;
+      line-height: 1.1;
+      color: #6f6c90;
+    }
+
+    @include vp-767 {
+      padding: 18px;
+      border: 1px solid #a7acc1;
+      border-radius: var(--form-border-radius);
+    }
+  }
+
+  &__submit {
+    min-width: 145px;
+    padding: 18px 40px;
+    border-radius: 56px;
+    box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+  }
+}

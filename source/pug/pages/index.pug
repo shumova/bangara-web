@@ -1,0 +1,21 @@
+extends ../components/base/layout
+
+block variables
+  -
+    const
+          title = "ЦФР — IT решения для вашего бизнеса",
+          wrapperMods = "",
+          hasHeader = true,
+          headerMods = "",
+          hasFooter = true,
+          footerMods = "",
+          currentUrl = "index.html"
+
+block main
+  main
+    +intro()
+    +automation()#about
+    +about()
+    +opportunities()#products
+    +blockquote()
+

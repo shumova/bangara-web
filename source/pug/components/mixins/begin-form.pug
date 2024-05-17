@@ -1,0 +1,9 @@
+mixin begin-form(data = {})
+  .begin-form(data-validate, data-callback="feedback")&attributes(attributes).standalone-form
+    form(action="#" method="post")
+      +custom-input({inputLabel: "E-mail", inputPlaceholder: "Введите ваш E-mail", inputName: "email", inputMinLength: "1"}).standalone-form__item(data-validate-type="email", data-required)
+      +button({
+        href: "#",
+        text: "Начать",
+        modifiers: ["view-primary"],
+      }).standalone-form__submit

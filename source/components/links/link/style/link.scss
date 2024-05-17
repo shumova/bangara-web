@@ -1,0 +1,114 @@
+.link {
+  --color: inherit;
+  --link-icon-indent: 10px;
+  --text-decoration: none;
+
+  // Hover
+  --color-hover: var(--color);
+  --text-decoration-hover: var(--text-decoration);
+
+  // Active
+  --color-active: var(--color);
+  --text-decoration-active: var(--text-decoration);
+
+  // Disabled
+  --color-disabled: var(--color);
+
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font: inherit;
+  color: var(--color);
+  background-color: $color-transparent;
+  border: none;
+  text-decoration: var(--text-decoration);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    text-decoration $trans-default,
+    color $trans-default;
+
+  @include hover {
+    svg:last-child {
+      transform: translateX(5px) translateZ(0);
+    }
+
+    svg:first-child {
+      transform: rotate(180deg) translateX(5px) translateZ(0);
+    }
+  }
+
+  @include hover-focus {
+    color: var(--color-hover);
+    text-decoration: var(--text-decoration-hover);
+  }
+
+  @include active {
+    color: var(--color-active);
+    text-decoration: var(--text-decoration-active);
+  }
+
+  &.is-disabled {
+    color: var(--color-disabled);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &.is-active {
+    color: var(--color-active);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  svg {
+    flex-shrink: 0;
+    height: 14px;
+    width: auto;
+    transition: transform $trans-default;
+    transform: translateZ(0);
+  }
+
+  svg:first-child {
+    transform: rotate(180deg);
+  }
+
+  svg + &__text,
+  &__text + svg {
+    margin-left: var(--link-icon-indent);
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &--view {
+    &-secondary {
+      --color: var(--color-control-typo-secondary);
+      --color-hover: var(--color-control-typo-secondary-hover);
+      --color-active: var(--color-control-typo-secondary-hover);
+
+      --text-decoration: var(--color-control-decoration-secondary);
+      --text-decoration-hover: var(--color-control-decoration-secondary-hover);
+      --text-decoration-active: var(--color-control-decoration-secondary-active);
+
+      font-weight: 700;
+      text-underline-offset: 0.4em;
+      text-decoration-skip-ink: none;
+      text-decoration-skip: none;
+    }
+
+    &-normal {
+      --color: var(--color-control-typo-normal);
+      --color-hover: var(--color-control-typo-normal-hover);
+      --color-active: var(--color-control-typo-normal-active);
+    }
+
+    &-success {
+      --color: var(--color-control-typo-success);
+      --color-hover: var(--color-control-typo-success-hover);
+      --color-active: var(--color-control-typo-success-active);
+    }
+  }
+}

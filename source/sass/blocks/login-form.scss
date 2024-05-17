@@ -1,0 +1,74 @@
+.login-form {
+  display: grid;
+
+  .title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #252525;
+  }
+
+  form {
+    margin-top: 50px;
+  }
+
+  &__item {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .error-message {
+    margin-top: 9px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: transparent;
+    transition: color $trans-default;
+  }
+
+  &__item.is-invalid ~ .error-message {
+    color: #ff0000;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px 22px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    border-radius: 12px;
+  }
+
+
+  &__create-account {
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+  }
+
+  &__note {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252525;
+  }
+
+  .link {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #4642EC;
+    transition: opacity $trans-default;
+
+    @include hover-focus {
+      color: #4642EC;
+      opacity: 0.6;
+    }
+  }
+}

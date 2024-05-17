@@ -1,0 +1,43 @@
+.agreement {
+  padding: 70px 0;
+
+  &__wrapper {
+    display: grid;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #1b1b1b;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    counter-reset: item;
+  }
+
+  li {
+    display: block;
+  }
+
+  li::before {
+    content: counters(item, ".") " ";
+    counter-increment: item
+  }
+
+  .agreement_back-button {
+    justify-self: center;
+    padding: 16px 25px;
+    margin-top: 60px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    border-radius: 12px;
+  }
+}

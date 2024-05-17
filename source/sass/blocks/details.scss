@@ -1,0 +1,77 @@
+.details {
+  --details-border-width: 0.4em;
+  --details-content-bg-color: inherit;
+  --details-content-border-radius: inherit;
+  --details-content-padding: 12px;
+  --details-summary-padding: #{$space-2xl};
+
+  padding: 20px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  summary {
+    position: relative;
+    display: block;
+    padding-left: var(--details-summary-padding);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #111928;
+    cursor: pointer;
+
+    .icon-tick {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: var(--details-border-width);
+      transform: translateY(-50%);
+      transform-origin: calc(var(--details-border-width) / 2) 50%;
+      transition: transform $trans-default;
+    }
+
+    .icon-expanded {
+      position: absolute;
+      top: 50%;
+      right: var(--details-border-width);
+      transform: translateY(-50%);
+      transform-origin: calc(var(--details-border-width) / 2) 50%;
+      transition: transform $trans-default;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  details {
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  details.is-active .icon-expanded {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  &__content {
+    display: grid; // От выпадения внешних отступов дочерних элементов и корректного вычисления высоты элемента
+    padding: var(--details-content-padding) 0;
+    padding-left: var(--details-summary-padding);
+    background-color: var(--details-content-bg-color);
+    border-radius: var(--details-content-border-radius);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6B7280;
+
+    p {
+      margin: 0;
+    }
+
+    @include vp-767 {
+      --details-content-padding: 0;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+build/*.js
+source/js/inline/*.js
+source/js/vendor/*.js
+source/sass/vendor/*.scss
+gulpfile.js
+webpack.config.js

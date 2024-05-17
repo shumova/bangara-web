@@ -1,0 +1,5 @@
+mixin page-nav(params = {})
+
+  nav.page-nav&attributes(attributes)
+    .page-nav__content
+      +nav-list(params.navList).page-nav__list

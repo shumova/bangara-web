@@ -1,0 +1,28 @@
+mixin in-work(props = {})
+  .in-work
+    .container
+      .in-work__wrapper
+        .in-work__content
+          +title({
+            tag: "h1",
+            text: "Мы&nbsp;работаем над данным разделом"
+          })
+          +text({
+            content: [
+              "Скоро здесь появится много захватывающих функций"
+            ]
+          })
+          +button({
+            href: "index.html",
+            text: "Вернуться назад",
+            modifiers: ["view-secondary"]
+          })
+        .in-work__img
+          +picture({
+            path: "content",
+            name: "error-in-dev",
+            format: "jpg",
+            width: "692",
+            height: "455",
+            altText: "Девушка чинит робота."
+          })

@@ -1,0 +1,88 @@
+mixin about(props = {})
+  -
+    const
+          list = [
+            {
+              title: "Автоматический скоринг",
+              content: [
+                "Комплекс анализирует более 1000 параметров и&nbsp;хранит актуальные данные на&nbsp;своих серверах. Это позволяет мгновенно получать информацию, не&nbsp;обращаясь каждый раз во&nbsp;внешние базы"
+              ],
+              link: "#"
+            },
+            {
+              title: "Look alike",
+              content: [
+                "Анализ списков недобросовестных поставщиков крупных компаний и&nbsp;отмечает контрагентов, существенно схожих с&nbsp;такими поставщиками. Признаки схожести указываются в&nbsp;досье заявителя"
+              ],
+              link: "#"
+            },
+            {
+              title: "Генерация документов",
+              content: [
+                "Без участия человека формируется полный пакет документов. От&nbsp;клиента требуется только подписание через встроенный модуль ЭЦП"
+              ],
+              link: "#"
+            }
+          ]
+
+
+
+  section.about&attributes(attributes)
+    .container
+      .about__wrapper
+        .about__heading
+          .about__logo
+            +picture({
+              path: "content",
+              name: "bangara",
+              format: "png",
+              width: "141",
+              height: "87",
+            })(aria-hidden="true")
+          .about__title-wrapper
+            +title({
+              tag: "span",
+              text: "Бангара"
+            }).about__title
+            .about__tooltip.tooltip
+              +icon-button({
+                icon: {
+                  name: "icon-approve",
+                  width: "15",
+                  height: "15"
+                }
+              })(aria-labelledby="notifications-label").tooltip__control
+              .tooltip__label(role="tooltip", id="notifications-label") Готовый продукт
+        +title({
+          tag: "h2",
+          text: "Инновационное решение для автоматизации продаж финансовых продуктов в B2B сегменте"
+        }).about__subtitle
+        ul.about__list
+          each item in list
+            li.about__item.about-card
+              +title({
+                tag: "span",
+                text: item.title
+              })
+              +text({
+                content: item.content
+              })
+              +link({
+                text: "Читать больше",
+                href: "about.html",
+                icon: {
+                  name: "icon-forward",
+                  width: 16,
+                  height: 17
+                },
+                modifiers: ["view-success"]
+              })
+        +button({
+          href: "about.html",
+          text: "Подробнее о&nbsp;продукте",
+          modifiers: ["view-primary", "form-round-xs"],
+        }).about__button
+
+
+
+

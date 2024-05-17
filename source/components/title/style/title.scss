@@ -1,0 +1,20 @@
+.title {
+  --font-weight: inherit;
+  --font-size: inherit;
+  --line-height: inherit;
+  --letter-spacing: inherit;
+
+  margin: 0;
+  padding: 0;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+
+  &--medium {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+}

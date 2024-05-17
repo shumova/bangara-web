@@ -1,0 +1,38 @@
+.tooltip {
+
+
+  &__control {
+    &:hover + .tooltip__label,
+    &:focus + .tooltip__label  {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    width: 160px;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    background-color: #009f9d;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $trans-default, visibility $trans-default;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: calc(100% - 1px);
+      border: 10px solid transparent;
+      border-top: 10px solid #009f9d;
+      transform: translateX(-50%);
+    }
+  }
+}

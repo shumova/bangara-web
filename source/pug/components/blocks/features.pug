@@ -1,0 +1,127 @@
+mixin features(props = {})
+  -
+    const
+          params = [
+            {
+              isImgRight: true,
+              img: {
+                path: "content/about-page",
+                name: "scoring",
+                format: "png",
+                width: "421",
+                height: "310",
+              },
+              title: "Автоматический скоринг",
+              list: [
+                "Автоодобрение", "Поведенченский скоринг", "Look alike"
+              ],
+              description: [
+                "Скоринг разработан на&nbsp;основе методов&nbsp;ИИ, таких как глубокое обучение. В&nbsp;качестве технологий планируется использование open-source решений на&nbsp;базе Python, в&nbsp;частности, библиотек Keras и&nbsp;TensorFlow. При помощи нейронных сетей глубокого обучения будет прогнозироваться вероятность неплатежа по&nbsp;всем доступным факторам на&nbsp;основании накопленной статистики обслуживания кредитов"
+              ]
+            },
+            {
+              img: {
+                path: "content/about-page",
+                name: "docs-flow",
+                format: "png",
+                width: "380",
+                height: "256",
+              },
+              title: "Взаиморасчеты",
+              list: [
+                "Генерация отчетов из&nbsp;БД&nbsp;Комплекса", "Подписание через ЭЦП", "Загрузка и&nbsp;выгрзука файлов в&nbsp;удобном формате (xls, 1c)"
+              ]
+            },
+            {
+              isImgRight: true,
+              img: {
+                path: "content/about-page",
+                name: "payments",
+                format: "png",
+                width: "257",
+                height: "260",
+              },
+              title: "Автоквитовка",
+              text: [
+                "Бангара сверяет поступившие в&nbsp;банковскую систему платежи с&nbsp;массивом поступающих заявок и&nbsp;производит их&nbsp;&laquo;квитовку&raquo;, автоматически переводя заявку на&nbsp;следующий статус. Получение данных из&nbsp;банковского SOAP сервиса происходит при помощи специального класса SOAPClient. Помимо &laquo;квитовки&raquo;, модуль производит сверку UID платежных документов с&nbsp;информацией в&nbsp;базе данных."
+              ]
+            },
+            {
+              img: {
+                path: "content/about-page",
+                name: "module",
+                format: "png",
+                width: "282",
+                height: "240",
+              },
+              title: "Модуль выпускающего конвейера",
+              text: [
+                "Пользователь может просмотреть и&nbsp;отредактировать макет документа, сформированного системой, распечатать его, загрузить скан и&nbsp;подписать его ЭЦП"
+              ]
+            },
+            {
+              isImgFloat: true,
+              img: {
+                path: "content/about-page",
+                name: "core",
+                format: "png",
+                width: "296",
+                height: "270",
+              },
+              title: "Ядро Комплекса",
+              listModifiers: ["feature__list--margin-size-l"],
+              list: [
+                "В&nbsp;состав ядра системы входит сервис авторизации, сервис оркестратора, CRM система, система сбора логов на&nbsp;базе fluentd и&nbsp;ClickHouse.",
+                "Сервис авторизации осуществляет аутентификацию и&nbsp;авторизацию пользователей Комплекса. Процесс основан на&nbsp;использовании JWT токенов, состоящих из&nbsp;нескольких частей.",
+                "Сервис авторизации генерирует новый JWT токен после успешной аутентификации пользователя, который впоследствии Frontend отправляет в&nbsp;header-e с&nbsp;каждым новым запросом к&nbsp;Backend части Комплекса. На&nbsp;Backend ограничение доступа к&nbsp;ресурсам осуществляется на&nbsp;основании прав каждого конкретного пользователя. Сервис оркестратора осуществляет контроль выполнения всех бизнес-процессов в&nbsp;рамках Комплекса.",
+                "В&nbsp;состав ядра входит также система управления содержимым (CMS) на&nbsp;основе Drupal, реализованная на&nbsp;языке PHP и&nbsp;использующая в&nbsp;качестве хранилища данных реляционную базу данных MySQL.",
+                "Ядро осуществляет централизованный сбор логов всех модулей Комплекса. Коллектор логов реализован на&nbsp;базе fluentd и&nbsp;ClickHouse.",
+                "Используемый стек: PHP, Symphony, GuzzleHttp, Curl, PostgreSQL, Drupal, MySQL, fluentd, ClickHouse"
+              ]
+            }
+          ]
+  section.features&attributes(attributes)
+    .container
+      +title({
+        tag: "h2",
+        text: "Преимущества"
+      }).visually-hidden
+      .features__wrapper
+        each param in params
+          - const img = param.img
+          - const isImgRight = param.isImgRight ? 'feature--img-right' : '';
+          - const isImgFloat = param.isImgFloat ? 'feature--img-float' : '';
+          - const modifiers = [isImgRight, isImgFloat];
+          .feature(class=[...modifiers])
+            .feature__img
+              +picture({
+                path: img.path,
+                name: img.name,
+                format: img.format,
+                width: img.width,
+                height: img.height,
+              })(aria-hidden="true")
+            .feature__content
+              +title({
+                tag: "h3",
+                text: param.title
+              }).feature__title
+              if param.list
+                - const listModifiers = param.listModifiers || [];
+                ul.feature__list(class=[...listModifiers])
+                  each item in param.list
+                    li.feature__item
+                      .feature__icon
+                        +icon("icon-tick", 16, 16)
+                      !=item
+              if param.text
+                +text({
+                  content: param.text
+                }).feature__text
+            if param.description
+              +text({
+                content: param.description
+              }).feature__description
+
+
+

@@ -1,0 +1,63 @@
+mixin header(headerMods, currentUrl)
+  - const isIndex = currentUrl == "index.html";
+  -
+    const params = {
+      decor: {
+          path: "content",
+          name: "header-bg",
+          format: "png",
+          width: "1555",
+          height: "362",
+      },
+      logo: {
+        isIndex,
+        img: {
+          path: "content/logo",
+          name: "logo-light",
+          format: "png",
+          width: "378",
+          height: "92",
+          altText: "Перейти на главную страницу"
+        }
+      },
+      pageNav: {
+        navList: {
+          currentUrl,
+          links: [
+            {
+              href: "index.html#about",
+              text: "О компании"
+            },
+            {
+              href: "index.html#products",
+              text: "Продукты"
+            },
+            {
+              href: "#contacts",
+              text: "Контакты"
+            },
+          ]
+        }
+      },
+      userMenu: {
+        loginLink: {
+          href: "login.html",
+          text: "Личный кабинет"
+        },
+        beginBtn: {
+          href: "#contacts",
+          text: "Начать"
+        }
+      }
+    }
+
+  header.header(class=headerMods, data-page-nav="container")
+    .header__decor
+      +picture(params.decor)
+    .container
+      .header__inner-wrapper
+        +logo(params.logo)
+        +burger().header__toggle(data-page-nav="toggle")
+        .header__nav(data-page-nav="content")
+          +page-nav(params.pageNav)
+          +user-menu(params.userMenu)

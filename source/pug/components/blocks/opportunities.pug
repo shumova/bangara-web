@@ -1,0 +1,112 @@
+mixin opportunities(props = {})
+  -
+    const
+          list = [
+            {
+              title: "Финансовые документы",
+              content: [
+                "Согласование счетов, актов, отгрузок.",
+                "Контроль оплат и&nbsp;графики платежей"
+              ],
+              img: "documents",
+              background: "opportunities-bg-1",
+              link: "#"
+            },
+            {
+              title: "Документооборот",
+              content: [
+                "Автоматизация соглаосваний договоров, документов и&nbsp;контрагентов"
+              ],
+              img: "circulation",
+              background: "opportunities-bg-2",
+              link: "#"
+            },
+            {
+              title: "CRM и&nbsp;продажи",
+              content: [
+                "Автоматизация продаж, маркетинг взаимоотношений"
+              ],
+              img: "crm",
+              background: "opportunities-bg-3",
+              link: "#"
+            },
+            {
+              title: "Заявки и&nbsp;сервис",
+              content: [
+                "Автоматизация обработки заявок сотрудников, клиентов и&nbsp;партнеров"
+              ],
+              img: "applications",
+              background: "opportunities-bg-4",
+              link: "#"
+            },
+            {
+              title: "Управление закупками",
+              content: [
+                "Автоматизация закупочных и&nbsp;тендерных процедур в&nbsp;компании"
+              ],
+              img: "purchases",
+              background: "opportunities-bg-5",
+              link: "#"
+            },
+            {
+              title: "Электронный архив",
+              content: [
+                "Автоматизация хранения скан-копий и&nbsp;оригиналов"
+              ],
+              img: "archive",
+              background: "opportunities-bg-6",
+              link: "#"
+            }
+          ]
+
+
+
+  section.opportunities&attributes(attributes)
+    .container
+      .opportunities__wrapper
+        .opportunities__content
+          +title({
+            tag: "h2",
+            text: "Наши возможности"
+          }).opportunities__title
+          .opportunities__list
+            each item in list
+              .opportunities__item.opportunity-card
+                .opportunity-card__decor(aria-hidden="true")
+                  +picture({
+                    path: "content/opportunities",
+                    name: item.background,
+                    format: "jpg",
+                    width: "640",
+                    height: "295"
+                  })
+                .opportunity-card__content
+                  .opportunity-card__img
+                     +picture({
+                      path: "content/opportunities",
+                      name: item.img,
+                      format: "jpg",
+                      width: "52",
+                      height: "52"
+                    })
+                  +title({
+                    tag: "span",
+                    text: item.title
+                  })
+                  +text({
+                    content: item.content
+                  })
+                  +link({
+                    text: "Детали",
+                    href: "error.html",
+                    icon: {
+                      name: "icon-forward",
+                      width: 16,
+                      height: 17
+                    },
+                    modifiers: ["view-normal"]
+                  })
+
+
+
+

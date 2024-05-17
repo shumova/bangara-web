@@ -1,0 +1,172 @@
+@use "sass:color";
+
+.button {
+  // Базовые значения
+  --padding: #{$control-space-m};
+  --font-weight: #{$font-weight-text-regular};
+  --font-size: #{$control-text-size-m};
+  --line-height: #{$line-height-text-m};
+  --letter-spacing: normal;
+  --text-transform: none;
+  --color: var(--color-control-typo-default);
+  --background-color: var(--color-control-bg-default);
+  --border-width: #{$control-border-width}; // Относительные единицы (например, em) работают лучше абсолютных с малыми значениями (1-3px вычисляются в браузере в дробные значения, что может давать погрешность при использовании переменной ширины кнопки, например, для позиционирования её псевдоэелементов)
+  --border-style: solid;
+  --border-color: var(--color-control-border-default);
+  --border-radius: 0;
+  --box-shadow: none;
+  --cursor: pointer;
+  --icon-indent: 10px;
+
+  // Состояние hover
+  --color-hover: var(--color);
+  --background-color-hover: var(--background-color);
+  --border-color-hover: var(--border-color);
+  --box-shadow-hover: var(--box-shadow);
+
+  // Состояние active
+  --color-active: var(--color);
+  --background-color-active: var(--background-color);
+  --border-color-active: var(--border-color);
+  --box-shadow-active: var(--box-shadow);
+
+  // Состояние disabled
+  --color-disabled: var(--color);
+  --background-color-disabled: var(--background-color);
+  --border-color-disabled: var(--border-color);
+  --box-shadow-disabled: var(--box-shadow);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+  color: var(--color);
+  background-color: var(--background-color);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  cursor: var(--cursor);
+  user-select: none;
+
+  transition:
+    color $trans-default,
+    background-color $trans-default,
+    border-color $trans-default,
+    box-shadow $trans-default;
+
+  @include hover-focus {
+    color: var(--color-hover);
+    background-color: var(--background-color-hover);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--box-shadow-hover);
+  }
+
+  @include active {
+    color: var(--color-active);
+    background-color: var(--background-color-active);
+    border-color: var(--border-color-active);
+    box-shadow: var(--box-shadow-active);
+  }
+
+  &.is-disabled {
+    color: var(--color-disabled);
+    background-color: var(--background-color-disabled);
+    border-color: var(--border-color-disabled);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &.is-active {
+    color: var(--color-active);
+    background-color: var(--background-color-active);
+    border-color: var(--border-color-active);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  svg {
+    flex-shrink: 0;
+    height: 16px;
+    width: auto;
+    transform: translateZ(0);
+  }
+
+  svg:first-child {
+    transform: rotate(180deg);
+  }
+
+  svg + &__text,
+  &__text + svg {
+    margin-left: var(--icon-indent);
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &--view {
+    &-primary {
+      --color: var(--color-control-typo-primary);
+      --color-hover: var(--color-control-typo-primary-hover);
+      --color-active: var(--color-control-typo-primary-active);
+
+      --background-color: var(--color-control-bg-primary);
+      --background-color-hover: var(--color-control-bg-primary-hover);
+      --background-color-active: var(--color-control-bg-primary-active);
+
+      // --box-shadow: #{$shadow-layer-5};
+      // --box-shadow-active: #{$shadow-layer-4};
+    }
+
+    &-secondary {
+      --color: var(--color-control-typo-secondary);
+      --color-hover: var(--color-control-typo-secondary-hover);
+      --color-active: var(--color-control-typo-secondary-active);
+
+      --background-color: var(--color-control-bg-secondary);
+      --background-color-hover: var(--color-control-bg-secondary-hover);
+      --background-color-active: var(--color-control-bg-secondary-active);
+    }
+
+    &-accent {
+      --color: var(--color-control-typo-accent);
+      --color-hover: var(--color-control-typo-accent-hover);
+      --color-active: var(--color-control-typo-accent-active);
+
+      --background-color: var(--color-control-bg-accent);
+      --background-color-hover: var(--color-control-bg-accent-hover);
+      --background-color-active: var(--color-control-bg-accent-active);
+    }
+  }
+
+  &--color {
+    &-black {
+      --color: #{$color-base-essential};
+      --color-hover: #{$color-base-essential};
+      --color-active: #{$color-base-essential};
+
+      --background-color: #000000;
+      --background-color-hover: #{color.adjust(#000000, $lightness: +30%)};
+      --background-color-active: #{color.adjust(#000000, $lightness: +30%)};
+    }
+  }
+
+  &--form {
+    &-round {
+      --border-radius: 99rem;
+
+      &-2xs {
+        --border-radius: #{$space-2xs};
+      }
+
+      &-xs {
+        --border-radius: #{$space-xs};
+      }
+    }
+  }
+}

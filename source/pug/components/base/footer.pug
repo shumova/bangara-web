@@ -1,0 +1,55 @@
+mixin footer(footerMods)
+  -
+    const params = {
+      content: {
+        title: {
+          text: "Обсудить идею или проект",
+          modifiers: ["medium" ]
+        },
+        //- text: {
+        //-   content: [
+        //-     "Вы всегда можете связаться с нашим менеджером или оставить заявку",
+        //-     "+7 (925) - 001-00-24"
+        //-   ]
+        //- }
+      },
+      decor: {
+          path: "content",
+          name: "footer-bg",
+          format: "png",
+          width: "1555",
+          height: "362",
+      },
+      logo: {
+        isIndex: true,
+        img: {
+          path: "content/logo",
+          name: "logo-small",
+          format: "png",
+          width: "56",
+          height: "60",
+          altText: "Логотип ЦФР"
+        }
+      },
+    }
+
+  footer.footer(class=footerMods)#contacts
+    .footer__decor
+      +picture(params.decor)
+    .container
+      .footer__inner-wrapper
+        .footer__content
+          +title(params.content.title)
+          .text
+            span Вы всегда можете связаться с&nbsp;нашим менеджером или оставить заявку
+            span +7 (925) - 001-00-24
+          address.footer__address 109028, г. Москва, вн.тер.г. муниципальный округ басманный, пер хохловский, д.&nbsp;15, помещ. 3п
+        +feedback-form()
+        .footer__footer
+          +logo(params.logo)
+          .footer__footer-content
+            span.footer__footer-text &copy;&nbsp;ООО &laquo;Цифровые финансовые решения&raquo;, 2024&nbsp;г.
+            +link({
+              href: "agreement.html",
+              text: "Политика обработки персональных данных"
+            }).footer__footer-link

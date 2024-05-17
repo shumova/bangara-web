@@ -1,0 +1,21 @@
+mixin blockquote(props = {})
+  .blockquote
+    .container
+      figure
+        span.blockquote__icon
+          +icon("icon-quotes", 48, 36)
+        blockquote
+          p.blockquote__text Продукты ЦФР просто великолепены. Они содержат множество готовых компонентов и&nbsp;страниц, от&nbsp;экрана входа в&nbsp;систему до&nbsp;сложных информационых панелей. Идеальный выбор для вашего бизнеса&quot;
+        figcaption
+          .blockquote__img
+            +picture({
+              path: "content",
+              name: "ceo",
+              format: "jpg",
+              width: "71",
+              height: "94",
+              altText: "Константин Бойков"
+            })
+          span.blockquote__name Константин Бойков
+            span.blockquote__separator /
+            span.blockquote__position CEO

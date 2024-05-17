@@ -1,0 +1,73 @@
+mixin automation(props = {})
+  section.automation&attributes(attributes)
+    .container
+      .automation__wrapper
+        .automation__content
+          +title({
+            tag: "h2",
+            text: "Автоматизация ваших бизнес процессов"
+          })
+          +text({
+            content: [
+              "Мы предоставляем IT услуги без традиционных сложностей ITSM-решений"
+            ]
+          })
+          +details({
+            content: [
+              {
+                summary: "Надежность",
+                description: "Мы&nbsp;стоим на&nbsp;страже ваших интересов, предоставляя гарантии высочайшего уровня. <b>Ваша безопасность&nbsp;&mdash; наш приоритет!</b>"
+              },
+              {
+                summary: "Инновации",
+                description: "Мы&nbsp;используем передовые технологии лучшие практики. С&nbsp;нами&nbsp;&mdash; Ваш бизнес на&nbsp;переднем крае развития"
+              },
+              {
+                summary: "Индивидуальный подход",
+                description: "Каждый клиент&nbsp;&mdash; уникален.Мы&nbsp;разрабатываем решения, соответствующие именно вашим потребностям, и&nbsp;стремимся создать индивидуальный опыт сотрудничества"
+              }
+            ]
+          }).automation__advantages
+          +text({
+            content: [
+              "Охватываем все процессы и действия по проектированию, созданию, имплементации и поддержке ИТ-услуг"
+            ]
+          })
+        .automation__imgs
+          .automation__img
+            +picture({
+              path: "content/automation",
+              name: "automation-1",
+              format: "jpg",
+              width: "235",
+              height: "144",
+              altText: "Интерфейс системы."
+            })
+          .automation__img
+            +picture({
+              path: "content/automation",
+              name: "automation-2",
+              format: "jpg",
+              width: "343",
+              height: "122",
+              altText: "Интерфейс системы."
+            })
+          .automation__img
+            +picture({
+              path: "content/automation",
+              name: "automation-3",
+              format: "jpg",
+              width: "235",
+              height: "261",
+              altText: "Интерфейс системы."
+            })
+          .automation__img
+            +picture({
+              path: "content/automation",
+              name: "automation-4",
+              format: "jpg",
+              width: "296",
+              height: "147",
+              altText: "Интерфейс системы."
+            })
+

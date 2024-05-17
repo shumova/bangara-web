@@ -1,0 +1,62 @@
+mixin examples(props = {})
+  -
+    const
+          slides = [
+            {
+              path: "content/about-page",
+              name: "slide-1",
+              format: "jpg",
+              width: "646",
+              height: "514",
+              altText: "Интерфейс сервиса"
+            },
+            {
+              path: "content/about-page",
+              name: "slide-2",
+              format: "jpg",
+              width: "384",
+              height: "315",
+              altText: "Интерфейс сервиса"
+            },
+            {
+              path: "content/about-page",
+              name: "slide-3",
+              format: "jpg",
+              width: "502",
+              height: "566",
+              altText: "Интерфейс сервиса"
+            },
+            {
+              path: "content/about-page",
+              name: "slide-4",
+              format: "jpg",
+              width: "1535",
+              height: "646",
+              altText: "Интерфейс сервиса"
+            }
+          ]
+
+  section.examples&attributes(attributes)
+    .container
+      .examples__wrapper
+        +title({
+          tag: "h2",
+          text: "Примеры реализации"
+        }).examples__title
+        .examples__slider
+          .examples__slider-heading
+            +picture({
+              path: "content/about-page",
+              name: "slider-heading",
+              format: "jpg",
+              width: "11392",
+              height: "45",
+            })(aria-hidden="true")
+    .slider(data-examples)
+      .swiper(data-examples-slider).slider__container
+        .swiper-wrapper.slider__wrapper
+          each slide in slides
+            .swiper-slide.slider__slide
+              .container
+                +picture(slide)
+        .swiper-pagination(data-examples-pagination).slider__pagination

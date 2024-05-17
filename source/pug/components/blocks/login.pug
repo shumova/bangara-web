@@ -1,0 +1,26 @@
+mixin login(props = {})
+  .login
+    .container
+      .login__wrapper
+        .login__img
+          +picture({
+            path: "content",
+            name: "login",
+            format: "jpg",
+            width: "591",
+            height: "578",
+            altText: "Девушка за работой."
+          })
+        .login__content
+          +logo({
+            isIndex: false,
+            img: {
+              path: "content/logo",
+              name: "logo-dark",
+              format: "png",
+              width: "378",
+              height: "92",
+              altText: "ЦФР - IT Решения для Вашего Бизнеса"
+            }
+          })
+          +login-form()

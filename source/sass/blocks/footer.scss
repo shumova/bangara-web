@@ -1,0 +1,127 @@
+.footer {
+  position: relative;
+  padding: 60px 0 10px;
+  background-color: $color-base-project;
+  color: var(--color-typo-essential);
+  overflow: hidden;
+
+  &__decor {
+    position: absolute;
+    top: -145px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      max-width: none;
+      object-fit: cover;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__inner-wrapper {
+    max-width: 1090px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(200px, 40%, 405px);
+    column-gap: clamp(50px, 8vw, 110px);
+    row-gap: 40px;
+    align-items: center;
+
+    @include vp-1023 {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 40px;
+    }
+  }
+
+  &__footer {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 19px 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  &__footer-content {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+
+    @include vp-767 {
+      justify-items: start;
+    }
+  }
+
+  &__footer-text {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__footer-link {
+    --text-decoration: underline;
+    --color-hover: #{$color-base-accent};
+    --color-active: #{$color-base-accent};
+
+    margin-top: 5px;
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: none;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    width: 56px;
+    height: 60px;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+
+    @include vp-767 {
+      font-size: 30px;
+    }
+  }
+
+  .text,
+  &__address {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: -0.02em;
+  }
+
+  .text {
+    margin-top: 20px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__address {
+    margin-top: 5px;
+    font-style: normal;
+  }
+
+  .feedback-form {
+    margin-top: auto;
+  }
+
+  &__footer {
+    text-align: center;
+
+    @include vp-767 {
+      text-align: left;
+
+      .link__text {
+        text-align: left;
+      }
+    }
+  }
+}

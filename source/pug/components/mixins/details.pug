@@ -1,0 +1,19 @@
+mixin details(props = {})
+  -
+    const
+          content = props.content || [];
+          modifiers = props.modifiers ? props.modifiers.map((mod) => "details--" + mod) : [];
+
+  .details(class=[...modifiers])&attributes(attributes)
+    each item, index in content
+      - const summary = item.summary || "";
+      - const description = item.description || "";
+      //- class=(index === 0 ? 'is-active' : '')
+      details(data-details="details")
+        summary(data-details="summary")!= summary
+          span.icon-tick
+            +icon("icon-tick", 16, 16)
+          span.icon-expanded
+            +icon("icon-expanded", 8, 12)
+        .details__content(data-details="content")
+          p!= description

@@ -1,0 +1,162 @@
+@use "sass:color";
+
+/* Базовые цвета, от которых выстраивается вся палитра */
+$color-base-base: #111928; /* Базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ... */
+$color-base-essential: #ffffff; /* Базовый цвет поверхностей */
+$color-base-project: #3734A9; /* Проектный цвет, от которого выстраивают акцентные состояния */
+// $color-base-phantom: #021f8b; /* Тонирующий цвет, от которого выстраиватся бордеры, оверлей под модальными окнами, ... */
+$color-base-path: #7e3af2; /* Цвет ссылок и контролов, от которого выстраиваются все их состояния */
+// $color-base-system: #ced8de; /* Цвет системнный */
+$color-base-shadow: #4a3aff; /* Цвет тени */
+$color-base-accent: #ff7f5c;
+
+/* Heading */
+
+$color-base-success: #01966b; /* Цвет успеха */
+$color-base-alert: #ff0000; /* Цвет ошибки */
+// $color-base-warning: #f38b00; /* Цвет предупреждения */
+// $color-base-caution: #f2c94c; /* Цвет осторожности */
+$color-base-normal: #308fff; /* Цвет нейтральный */
+// $color-base-critical: #33000f;
+// $color-transparent: transparent;
+
+
+
+
+.theme-default {
+  /* Цвета текста */
+  --color-typo-essential: #{$color-base-essential};
+//   --color-typo-primary: #{$color-base-base}; /* Цвет основного текста */
+//   --color-typo-secondary: #{color.change($color-base-base, $alpha: 0.6)}; /* Цвет второстепенного текста */
+//   --color-typo-ghost: #{color.change($color-base-base, $alpha: 0.3)}; /* Цвет дополнительного текста */
+
+//   --color-typo-brand: #{$color-base-project}; /* Цвет брендового текста */
+//   --color-typo-system: #{color.change($color-base-system, $hue: 204deg, $saturation: 28%, $lightness: 68%)}; /* Цвет фона системнный */
+//   --color-typo-normal: #{color.adjust($color-base-normal, $saturation: +14%, $lightness: -4%)}; /* Цвет фона нейтральный */
+//   --color-typo-success: #{color.adjust($color-base-success, $saturation: +20%, $lightness: -8%)}; /* Цвет текста успеха */
+//   --color-typo-caution: #{color.adjust($color-base-caution, $saturation: +15%, $hue: -8deg, $lightness: -10%)}; /* Цвет текста осторожности */
+//   --color-typo-warning: #{color.adjust($color-base-warning, $hue: -4deg, $saturation: -2%, $lightness: -2%)}; /* Цвет текста предупреждения */
+//   --color-typo-alert: #{color.adjust($color-base-alert, $saturation: +3%, $lightness: -7%)}; /* Цвет текста ошибки */
+//   --color-typo-critical: #{$color-base-critical}; /* Цвет фона системнный */
+//   --color-typo-link: #{$color-base-path}; /* Цвет основной ссылки */
+//   --color-typo-link-minor: #{color.adjust($color-base-path, $saturation: -35%, $lightness: -10%)}; /* Цвет второстепенной ссылки */
+//   --color-typo-link-hover: #{color.adjust($color-base-path, $lightness: +8%)}; /* Цвет ховера ссылки */
+
+//   // /* Цвета фонов */
+//   --color-bg-default: #{$color-base-essential}; /* Цвет дефолта */
+//   --color-bg-secondary: #{color.adjust($color-base-project, $saturation: -75%, $lightness: +59%)}; /* Цвет дефолта */
+//   --color-bg-brand: #{$color-base-project}; /* Цвет фона брендированый */
+//   --color-bg-link: #{$color-base-path}; /* Цвет фона ссылки */
+//   --color-bg-border: #{color.adjust($color-base-phantom, $lightness: -1%, $alpha: -0.8)}; /* Цвет границ */
+//   --color-bg-stripe: #{color.adjust($color-base-phantom, $lightness: -11%, $alpha: -0.95)}; /* Цвет зебры (например, при окрашивании фона строк таблицы через одну) */
+//   --color-bg-ghost: #{color.adjust($color-base-phantom, $lightness: -11%, $alpha: -0.92)}; /* Цвет затенения */
+//   --color-bg-tone: #{color.adjust($color-base-phantom, $lightness: -11%, $alpha: -0.3)}; /* Цвет паранджи */
+//   --color-bg-soft: #{color.change($color-base-essential, $alpha: 0.9)}; /* Цвет молока */
+//   --color-bg-system: #{color.change($color-base-system, $hue: 204deg, $saturation: 18%, $lightness: 89%)}; /* Цвет фона системнный */
+//   --color-bg-normal: #{$color-base-normal}; /* Цвет фона нейтральный */
+//   --color-bg-success: #{$color-base-success}; /* Цвет фона успеха */
+//   --color-bg-caution: #{$color-base-caution}; /* Цвет фона осторожности */
+//   --color-bg-warning: #{$color-base-warning}; /* Цвет фона предупреждения */
+//   --color-bg-alert: #{$color-base-alert}; /* Цвет фона ошибки */
+//   --color-bg-critical: #{$color-base-critical}; /* Цвет фона системнный */
+
+//   /* Цвета скроллбара */
+//   --color-scroll-bg: #{color.change($color-base-phantom, $alpha: 0.6)};
+//   --color-scroll-thumb: #{color.change($color-base-phantom, $alpha: 0.24)};
+//   --color-scroll-thumb-hover: #{color.change($color-base-phantom, $alpha: 0.32)};
+
+//   // /* Цвета контролов */
+
+//   // Default
+
+//   --color-control-typo-default: #{color.change($color-base-base, $alpha: 0.9)};
+//   --color-control-typo-default-hover: #{color.change($color-base-base, $alpha: 0.75)};
+//   --color-control-typo-default-active: #{color.change($color-base-base, $alpha: 0.75)};
+
+
+//   --color-control-bg-default: #{$color-base-essential};
+//   --color-control-bg-default-hover: #{color.change($color-base-base, $alpha: 0.3)};
+//   --color-control-bg-default-active: #{color.change($color-base-base, $alpha: 0.5)};
+
+//   --color-control-border-default: #{$color-transparent};
+//   --color-control-border-default-hover: #{$color-transparent};
+//   --color-control-border-active: #{color.adjust($color-base-path, $lightness: +15%)};
+
+//   --color-control-typo-placeholder: #{color.change($color-base-base, $alpha: 0.35)};
+
+
+  // Primary
+  --color-control-typo-primary: #{$color-base-essential};
+  --color-control-typo-primary-hover: #{$color-base-essential};
+  --color-control-typo-primary-active: #{$color-base-essential};
+
+  --color-control-bg-primary: #{$color-base-path};
+  --color-control-bg-primary-hover: #{color.adjust($color-base-path, $lightness: +9%)};
+  --color-control-bg-primary-active: #{color.adjust($color-base-path, $lightness: +9%)};
+
+  // Secondary
+  --color-control-typo-secondary: #{$color-base-essential};
+  --color-control-typo-secondary-hover: #{$color-base-essential};
+  --color-control-typo-secondary-active: #{$color-base-essential};
+
+  --color-control-bg-secondary: #4642ec;
+  --color-control-bg-secondary-hover: #{color.adjust(#4642ec, $lightness: +9%)};
+  --color-control-bg-secondary-active: #{color.adjust(#4642ec, $lightness: +9%)};
+
+  --color-control-decoration-secondary: underline 2px solid transparent;
+  --color-control-decoration-secondary-hover: underline 2px solid #ceb6f8;
+  --color-control-decoration-secondary-active: underline 2px solid #ceb6f8;
+
+  // Accent
+  --color-control-typo-accent: #{$color-base-essential};
+  --color-control-typo-accent-hover: #{$color-base-essential};
+  --color-control-typo-accent-active: #{$color-base-essential};
+
+  --color-control-bg-accent: #{$color-base-accent};
+  --color-control-bg-accent-hover: #{color.adjust($color-base-accent, $lightness: +9%)};
+  --color-control-bg-accent-active: #{color.adjust($color-base-accent, $lightness: +9%)};
+
+  // Normal
+  --color-control-typo-normal: #{$color-base-normal};
+  --color-control-typo-normal-hover: #{$color-base-normal};
+  --color-control-typo-normal-active: #{$color-base-normal};
+
+  // Success
+  --color-control-typo-success: #{$color-base-success};
+  --color-control-typo-success-hover: #{$color-base-success};
+  --color-control-typo-success-active: #{$color-base-success};
+
+
+//   // Secondary
+//   --color-control-bg-secondary: #{$color-base-essential};
+//   --color-control-bg-secondary-hover: #{$color-base-essential};
+//   --color-control-border-secondary: #{color.change($color-base-phantom, $alpha: 0.28)};
+//   --color-control-border-secondary-hover: #{color.change($color-base-phantom, $alpha: 0.52)};
+//   --color-control-border-secondary-active: #{color.adjust($color-base-path, $lightness: +15%)};
+//   --color-control-typo-secondary: #{$color-base-path};
+//   --color-control-typo-secondary-hover: #{color.adjust($color-base-path, $lightness: +9%)};
+
+//   // Ghost
+//   --color-control-bg-ghost: #{color.change($color-base-phantom, $alpha: 0.07)};
+//   --color-control-bg-ghost-hover: #{color.change($color-base-phantom, $alpha: 0.05)};
+//   --color-control-typo-ghost: #{color.adjust($color-base-base, $hue: +1deg, $lightness: +8%, $alpha: -0.2)};
+//   --color-control-typo-ghost-hover: #{color.adjust($color-base-base, $hue: +1deg, $lightness: +8%, $alpha: -0.25)};
+
+//   // Clear
+//   --color-control-bg-clear: #{$color-transparent};
+//   --color-control-bg-clear-hover: #{color.change($color-base-phantom, $alpha: 0.05)};
+//   --color-control-typo-clear: #{$color-base-base};
+//   --color-control-typo-clear-hover: #{color.adjust($color-base-base, $hue: +1deg, $lightness: +8%, $alpha: -0.25)};
+
+//   // disabled
+//   --color-control-bg-disabled: #{color.change($color-base-phantom, $alpha: 0.07)};
+//   --color-control-border-disabled: #{color.change($color-base-phantom, $alpha: 0)};
+//   --color-control-typo-disabled: #{color.change($color-base-base, $alpha: 0.26)};
+
+//   /* Цвета тени */
+//   --color-shadow-group-1: #{color.change($color-base-shadow, $alpha: 0.02)};
+//   --color-shadow-group-2: #{color.change($color-base-shadow, $alpha: 0.16)};
+
+  --color-shadow-layer-1: #{color.change($color-base-shadow, $alpha: 0.3)};
+  --color-shadow-layer-2: #{color.change($color-base-shadow, $alpha: 0.15)};
+}

@@ -1,0 +1,23 @@
+mixin login-form(data = {})
+  .login-form(data-validate, data-callback="feedback")&attributes(attributes)
+    +title({
+      tag: "h1",
+      text: "Вход в&nbsp;личный кабинет"
+    })
+    form(action="#" method="post")
+      +custom-input({inputLabel: "Логин", inputPlaceholder: "Логин", inputName: "login", inputMinLength: "1"}).custom-input--base.login-form__item(data-validate-type="text", data-required)
+      +custom-input({inputLabel: "Телефон", inputPlaceholder: "Телефон", inputName: "phone"}).custom-input--base.login-form__item(data-validate-type="phone", data-required)
+      .error-message Неверный логин или пароль
+      +button({
+        text: "Войти",
+        type: "submit",
+        modifiers: ["view-secondary"]
+      }).login-form__submit
+      .login-form__create-account
+        span.login-form__note Еще не являетесь нашим клиентом?
+        +link({
+          tag: "a",
+          href: "error.html",
+          text: "Создать аккаунт",
+          modifiers: ["view-system"]
+        })

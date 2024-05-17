@@ -1,0 +1,9 @@
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, $space-2xl);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

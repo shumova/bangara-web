@@ -1,0 +1,34 @@
+mixin intro(props = {})
+  section.intro
+    .container
+      .intro__wrapper
+        .intro__content
+          +title({
+            tag: "h1",
+            text: "IT Решения для Вашего Бизнеса"
+          })
+          +text({
+            content: [
+              "Простая и гибкая автоматизация продаж, документооборота, согласования электронного архива, CRM и других бизнес-процессов"
+            ]
+          })
+          +begin-form()
+        .intro__img
+          +picture({
+            path: "content",
+            name: "intro",
+            format: "png",
+            width: "473",
+            height: "455",
+            altText: "Рабочий процесс."
+          })
+        ul.intro__partners
+          li.intro__partner
+            +picture({
+              path: "content",
+              name: "skolkovo",
+              format: "png",
+              width: "220",
+              height: "64",
+              altText: "Логотип ТКБ."
+            })

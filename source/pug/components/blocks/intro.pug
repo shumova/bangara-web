@@ -5,14 +5,18 @@ mixin intro(props = {})
         .intro__content
           +title({
             tag: "h1",
-            text: "IT Решения для Вашего Бизнеса"
+            text: "Ваш <span class='title-gradient title-gradient--pink'>Надежный</span> партенер  в <span class='title-gradient title-gradient--blue'>Банковских гарантиях</span>"
           })
           +text({
             content: [
-              "Простая и гибкая автоматизация продаж, документооборота, согласования электронного архива, CRM и других бизнес-процессов"
+              "Мы специализируемся на предоставлении качественных финансовых гарантий, обеспечивая ваш бизнес надежной защитой в любых финансовых сделках"
             ]
           })
-          +begin-form()
+          +button({
+            text: "Присоединиться",
+            type: "button",
+            modifiers: ["view-secondary"]
+          }).login-form__submit
         .intro__img
           +picture({
             path: "content",
@@ -22,13 +26,5 @@ mixin intro(props = {})
             height: "455",
             altText: "Рабочий процесс."
           })
-        ul.intro__partners
-          li.intro__partner
-            +picture({
-              path: "content",
-              name: "skolkovo",
-              format: "png",
-              width: "220",
-              height: "64",
-              altText: "Логотип ТКБ."
-            })
+ 
+

@@ -2,13 +2,13 @@
   display: grid;
   border-radius: 4px;
   transition: outline $trans-default;
-  border: 1px solid rgba(27, 27, 27, 0.15);
+  // border: 1px solid rgba(27, 27, 27, 0.15);
   outline: 2px solid transparent;
   outline-offset: -2px;
   overflow: hidden;
 
   &:hover {
-    outline: 2px solid #308fff;
+    // outline: 2px solid #308fff;
 
     .opportunity-card__decor {
       transform: scale(1.2);
@@ -56,11 +56,11 @@
     display: block;
     margin-top: 16px;
     font-weight: 700;
-    font-size: 34px;
-    line-height: 1.35;
+    font-size: 24px;
+    line-height: 125%;
     letter-spacing: 0.25px;
-    color: #1B1B1B;
-    overflow-wrap: anywhere;
+    color: #111928;
+   
 
     @include vp-767 {
       font-size: 30px;
@@ -68,21 +68,11 @@
   }
 
   .text {
-    margin-top: 16px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.5;
+    margin-top: 8px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
     letter-spacing: 0.15px;
-    color: #1B1B1B;
-  }
-
-  .link {
-    align-self: end;
-    justify-self: left;
-    margin-top: 28px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.75px;
+    color: #000c2d;
   }
 }

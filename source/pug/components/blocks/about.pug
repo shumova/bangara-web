@@ -3,25 +3,28 @@ mixin about(props = {})
     const
           list = [
             {
-              title: "Автоматический скоринг",
+              title: "Гибкие Решения",
               content: [
-                "Комплекс анализирует более 1000 параметров и&nbsp;хранит актуальные данные на&nbsp;своих серверах. Это позволяет мгновенно получать информацию, не&nbsp;обращаясь каждый раз во&nbsp;внешние базы"
+                "Bangara понимает, что каждый бизнес уникален. Мы предлагаем гибкие и индивидуальные решения в области банковских гарантий, которые соответствуют вашим конкретным потребностям и обеспечивают ваши интересы."
               ],
-              link: "#"
+              link: "#",
+             img: "about-img-1",
             },
             {
-              title: "Look alike",
+              title: "Высокий Стандарт Надежности",
               content: [
-                "Анализ списков недобросовестных поставщиков крупных компаний и&nbsp;отмечает контрагентов, существенно схожих с&nbsp;такими поставщиками. Признаки схожести указываются в&nbsp;досье заявителя"
+                "Наша команда экспертов гарантирует высокий стандарт надежности в каждой выданной гарантии. Мы стремимся к тому, чтобы ваши партнеры и клиенты имели полное доверие к вашей финансовой стойкости."
               ],
-              link: "#"
+              link: "#",
+              img: "about-img-2",
             },
             {
-              title: "Генерация документов",
+              title: "Комплексное Покрытие",
               content: [
-                "Без участия человека формируется полный пакет документов. От&nbsp;клиента требуется только подписание через встроенный модуль ЭЦП"
+                "Наши банковские гарантии охватывают широкий спектр сфер, включая бизнес-сделки, государственные контракты, и проекты в сфере строительства. Мы предоставляем комплексное покрытие, чтобы обеспечить вас в различных областях вашей деятельности."
               ],
-              link: "#"
+              link: "#",
+              img: "about-img-3",
             }
           ]
 
@@ -31,35 +34,22 @@ mixin about(props = {})
     .container
       .about__wrapper
         .about__heading
-          .about__logo
-            +picture({
-              path: "content",
-              name: "bangara",
-              format: "png",
-              width: "141",
-              height: "87",
-            })(aria-hidden="true")
           .about__title-wrapper
             +title({
               tag: "span",
-              text: "Бангара"
+              text: "Банковские гарантии"
             }).about__title
-            .about__tooltip.tooltip
-              +icon-button({
-                icon: {
-                  name: "icon-approve",
-                  width: "15",
-                  height: "15"
-                }
-              })(aria-labelledby="notifications-label").tooltip__control
-              .tooltip__label(role="tooltip", id="notifications-label") Готовый продукт
-        +title({
-          tag: "h2",
-          text: "Инновационное решение для автоматизации продаж финансовых продуктов в B2B сегменте"
-        }).about__subtitle
         ul.about__list
           each item in list
             li.about__item.about-card
+              .about-card__img
+                +picture({
+                  path: "content",
+                  name: item.img,
+                  format: "png",
+                  width: "58",
+                  height: "58"
+                })
               +title({
                 tag: "span",
                 text: item.title
@@ -67,21 +57,6 @@ mixin about(props = {})
               +text({
                 content: item.content
               })
-              +link({
-                text: "Читать больше",
-                href: "about.html",
-                icon: {
-                  name: "icon-forward",
-                  width: 16,
-                  height: 17
-                },
-                modifiers: ["view-success"]
-              })
-        +button({
-          href: "about.html",
-          text: "Подробнее о&nbsp;продукте",
-          modifiers: ["view-primary", "form-round-xs"],
-        }).about__button
 
 
 

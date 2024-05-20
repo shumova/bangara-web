@@ -1,5 +1,5 @@
 .about {
-  padding: 0 0 70px;
+  padding: 46px 0 70px;
   background-color: #fbfaff;
 
   &__wrapper {
@@ -10,9 +10,6 @@
   }
 
   &__heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    gap: 20px;
     align-items: center;
     justify-items: center;
     margin-bottom: 27px;
@@ -29,20 +26,42 @@
 
   &__title-wrapper {
     position: relative;
+    // &:after {
+    //   position: absolute;
+    //   top: 50px;
+    //   left: 50%;
+      
+    //   display: block;
+    //   background: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+    //   width: 69px;
+    //   height: 5px;
+    // }
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 36px;
-    line-height: 1.25;
+    position: relative;
+    font-weight: 700;
+    font-size: 35px;
+    line-height:  157%;
     text-align: center;
-    letter-spacing: -0.01em;
-    color: #111928;
-
+    color: #1a202c;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: -13px;
+      display: block;
+      width: 69px;
+      height: 5px;
+      background: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+      transform: translateX(-50%);
+    } 
     @include vp-767 {
       font-size: 30px;
     }
   }
+
 
   &__tooltip {
     position: absolute;

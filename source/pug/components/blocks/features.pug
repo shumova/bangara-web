@@ -3,90 +3,41 @@ mixin features(props = {})
     const
           params = [
             {
-              isImgRight: true,
+              isImgRight: false,
               img: {
-                path: "content/about-page",
-                name: "scoring",
+                path: "content",
+                name: "tkb",
                 format: "png",
-                width: "421",
-                height: "310",
+                width: "520",
+                height: "224",
               },
-              title: "Автоматический скоринг",
-              list: [
-                "Автоодобрение", "Поведенченский скоринг", "Look alike"
-              ],
-              description: [
-                "Скоринг разработан на&nbsp;основе методов&nbsp;ИИ, таких как глубокое обучение. В&nbsp;качестве технологий планируется использование open-source решений на&nbsp;базе Python, в&nbsp;частности, библиотек Keras и&nbsp;TensorFlow. При помощи нейронных сетей глубокого обучения будет прогнозироваться вероятность неплатежа по&nbsp;всем доступным факторам на&nbsp;основании накопленной статистики обслуживания кредитов"
-              ]
-            },
-            {
-              img: {
-                path: "content/about-page",
-                name: "docs-flow",
-                format: "png",
-                width: "380",
-                height: "256",
-              },
-              title: "Взаиморасчеты",
-              list: [
-                "Генерация отчетов из&nbsp;БД&nbsp;Комплекса", "Подписание через ЭЦП", "Загрузка и&nbsp;выгрзука файлов в&nbsp;удобном формате (xls, 1c)"
+              title: "Новый партнер",
+              text: [
+                "Наша команда рада объявить о успешном подключении нашего первого центрального партнера - «Транскапиталбанк». Это важное событие отмечает начало долгосрочного партнерства между нашими организациями, направленного на предоставление нашим клиентам улучшенных финансовых услуг."
               ]
             },
             {
               isImgRight: true,
               img: {
-                path: "content/about-page",
-                name: "payments",
+                path: "content",
+                name: "bangara",
                 format: "png",
-                width: "257",
-                height: "260",
+                width: "480",
+                height: "144",
               },
-              title: "Автоквитовка",
+              title: "Поехали!",
               text: [
-                "Бангара сверяет поступившие в&nbsp;банковскую систему платежи с&nbsp;массивом поступающих заявок и&nbsp;производит их&nbsp;&laquo;квитовку&raquo;, автоматически переводя заявку на&nbsp;следующий статус. Получение данных из&nbsp;банковского SOAP сервиса происходит при помощи специального класса SOAPClient. Помимо &laquo;квитовки&raquo;, модуль производит сверку UID платежных документов с&nbsp;информацией в&nbsp;базе данных."
+                "Уважаемые пользователи, радостная новость! С большим волнением мы объявляем о запуске нашей новой платформы сегодня. Это великолепное событие стало возможным благодаря усилиям нашей талантливой команды разработчиков, которые работали на протяжении 2023 г., чтобы создать самый инновационный и удобный онлайн-инструмент для вас."
               ]
             },
-            {
-              img: {
-                path: "content/about-page",
-                name: "module",
-                format: "png",
-                width: "282",
-                height: "240",
-              },
-              title: "Модуль выпускающего конвейера",
-              text: [
-                "Пользователь может просмотреть и&nbsp;отредактировать макет документа, сформированного системой, распечатать его, загрузить скан и&nbsp;подписать его ЭЦП"
-              ]
-            },
-            {
-              isImgFloat: true,
-              img: {
-                path: "content/about-page",
-                name: "core",
-                format: "png",
-                width: "296",
-                height: "270",
-              },
-              title: "Ядро Комплекса",
-              listModifiers: ["feature__list--margin-size-l"],
-              list: [
-                "В&nbsp;состав ядра системы входит сервис авторизации, сервис оркестратора, CRM система, система сбора логов на&nbsp;базе fluentd и&nbsp;ClickHouse.",
-                "Сервис авторизации осуществляет аутентификацию и&nbsp;авторизацию пользователей Комплекса. Процесс основан на&nbsp;использовании JWT токенов, состоящих из&nbsp;нескольких частей.",
-                "Сервис авторизации генерирует новый JWT токен после успешной аутентификации пользователя, который впоследствии Frontend отправляет в&nbsp;header-e с&nbsp;каждым новым запросом к&nbsp;Backend части Комплекса. На&nbsp;Backend ограничение доступа к&nbsp;ресурсам осуществляется на&nbsp;основании прав каждого конкретного пользователя. Сервис оркестратора осуществляет контроль выполнения всех бизнес-процессов в&nbsp;рамках Комплекса.",
-                "В&nbsp;состав ядра входит также система управления содержимым (CMS) на&nbsp;основе Drupal, реализованная на&nbsp;языке PHP и&nbsp;использующая в&nbsp;качестве хранилища данных реляционную базу данных MySQL.",
-                "Ядро осуществляет централизованный сбор логов всех модулей Комплекса. Коллектор логов реализован на&nbsp;базе fluentd и&nbsp;ClickHouse.",
-                "Используемый стек: PHP, Symphony, GuzzleHttp, Curl, PostgreSQL, Drupal, MySQL, fluentd, ClickHouse"
-              ]
-            }
           ]
   section.features&attributes(attributes)
     .container
       +title({
         tag: "h2",
-        text: "Преимущества"
-      }).visually-hidden
-      .features__wrapper
+        text: "Новости"
+      })
+    .features__wrapper
         each param in params
           - const img = param.img
           - const isImgRight = param.isImgRight ? 'feature--img-right' : '';
@@ -106,22 +57,24 @@ mixin features(props = {})
                 tag: "h3",
                 text: param.title
               }).feature__title
-              if param.list
-                - const listModifiers = param.listModifiers || [];
-                ul.feature__list(class=[...listModifiers])
-                  each item in param.list
-                    li.feature__item
-                      .feature__icon
-                        +icon("icon-tick", 16, 16)
-                      !=item
-              if param.text
-                +text({
-                  content: param.text
-                }).feature__text
-            if param.description
               +text({
-                content: param.description
-              }).feature__description
+                content: param.text
+              }).feature__text
+              .figcaption-block
+                .blockquote__img
+                  +picture({
+                    path: "content",
+                    name: "ceo",
+                    format: "jpg",
+                    width: "71",
+                    height: "94",
+                    altText: "Константин Бойков"
+                  })
+                span.blockquote__name Константин Бойков
+                  span.blockquote__separator
+                  span.blockquote__position CEO
+                .blockquote__data 29.05.2024
+        
 
-
+  
 

@@ -2,14 +2,18 @@
   display: grid;
 
   .title {
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 31px;
-    color: #252525;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #0092be;
   }
 
   form {
     margin-top: 50px;
+
+    @include vp-767 {
+      overflow: hidden;
+    }
   }
 
   &__item {
@@ -20,8 +24,25 @@
     }
   }
 
+  &__controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    margin-top: 10px;
+
+    @include vp-767 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__forget-link {
+    justify-self: left;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
   .error-message {
-    margin-top: 9px;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -29,46 +50,41 @@
     transition: color $trans-default;
   }
 
-  &__item.is-invalid ~ .error-message {
+  &__item.is-invalid ~ .login-form__controls .error-message {
     color: #ff0000;
   }
 
   &__submit {
-    width: 100%;
-    margin-top: 24px;
-    padding: 16px 22px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    border-radius: 12px;
-  }
+    justify-self: right;
+    grid-column: 2;
+    padding: 15px 35px;
+    border-radius: 10px;
 
-
-  &__create-account {
-    display: grid;
-    place-items: center;
-    margin-top: 40px;
+    @include vp-767 {
+      grid-column: auto;
+      justify-self: center;
+    }
   }
 
   &__note {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #252525;
+    margin-top: 70px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #9f9f9f;
   }
 
   .link {
-    margin-top: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #4642EC;
+    color: #1ea8e7;
     transition: opacity $trans-default;
 
     @include hover-focus {
-      color: #4642EC;
+      color: #1ea8e7;
       opacity: 0.6;
     }
+  }
+
+  &__account-link {
+    font: inherit;
   }
 }

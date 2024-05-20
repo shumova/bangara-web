@@ -1,0 +1,81 @@
+.decorated-page {
+  position: relative;
+
+  @include vp-767 {
+    text-align: center;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 80%;
+    background-color: #ffffff;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__intro {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: clamp(20px, 5vw, 115px);
+    max-width: min(40%, 890px);
+    transform: translateY(-50%);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.6;
+    color: #ffffff;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: grid;
+    width: 35%;
+    min-width: 500px;
+    margin-left: auto;
+    padding: 80px;
+    padding-right: calc(60px - var(--container-offset));
+    border-radius: 70px;
+    background-color: #ffffff;
+
+    @include vp-1023 {
+      margin: 50px auto;
+      padding: 50px;
+      width: auto;
+      min-width: auto;
+    }
+
+    @include vp-767 {
+      padding: 20px;
+    }
+  }
+}

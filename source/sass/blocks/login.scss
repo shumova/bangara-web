@@ -15,22 +15,6 @@
     flex-grow: 1;
   }
 
-  &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(50px, 10vw, 150px);
-    row-gap: 50px;
-    align-items: center;
-    max-width: 1170px;
-    margin: 0 auto;
-
-    @include vp-1023 {
-      grid-template-columns: minmax(0, 1fr);
-      justify-items: center;
-      align-content: center;
-    }
-  }
-
   &__content {
     @include vp-1023 {
       display: grid;
@@ -40,13 +24,18 @@
     }
   }
 
-  &__img {
-    @include vp-1023 {
-
-    }
-  }
-
   .login-form {
     margin-top: 29px;
+  }
+
+  .logo {
+    max-width: 340px;
+  }
+
+  &__home-btn {
+    margin-top: 40px;
+    padding: 5px 25px;
+    font-weight: 400;
+    font-size: 30px;
   }
 }

@@ -9,8 +9,11 @@ mixin custom-input(options = {})
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
   - const inputMax = options.inputMax ? options.inputMax : false
   - const inputMin = options.inputMin ? options.inputMin : false
+  - const icon = options.icon
 
   .custom-input&attributes(attributes)
+    if icon
+      +icon(icon.name, icon.width, icon.height)
     label
       if inputLabel
         span.visually-hidden!=inputLabel

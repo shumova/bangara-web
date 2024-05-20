@@ -5,20 +5,8 @@ mixin user-menu(props = {})
     - const isActive = currentUrl === loginLink.href
     - const tag = isActive ? "span" : "a"
 
-    +link({
-      tag: tag,
-      href: loginLink.href,
-      text: loginLink.text,
-      isActive,
-      icon: {
-        name: 'icon-new-window',
-        width: 16,
-        height: 17,
-      }
-    }).user-menu__login-link
-
     +button({
       href: beginBtn.href,
       text: beginBtn.text,
-      modifiers: ["view-primary", "form-round-xs"],
+      modifiers: ["gradient", "form-round-xs", "weight-600"],
     }).user-menu__begin-btn

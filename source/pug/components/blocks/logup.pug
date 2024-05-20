@@ -1,0 +1,39 @@
+mixin logup(props = {})
+  .logup.decorated-page
+    .decorated-page__decor
+      +picture({
+        path: "content/bangara",
+        name: "login-bg",
+        format: "jpg",
+        width: "1920",
+        height: "1200",
+        altText: "Горы на фоне голубого неба."
+      })
+    .container.container--wide
+      .decorated-page__intro
+        +text({
+          content: [
+            "В&nbsp;основе успешного бизнеса лежит стабильность и&nbsp;уверенность в&nbsp;будущем.",
+            "Бангара&nbsp;&mdash; ваш надежный партнер!"
+          ],
+          modifiers: ["space-m"]
+        })
+        +button({
+          text: "Главная",
+          href: "index.html",
+          modifiers: ["view-clear"]
+        }).logup__home-btn
+      .decorated-page__content
+        .logup__content
+          +logo({
+            isIndex: false,
+            img: {
+              path: "content/logo",
+              name: "logo",
+              format: "png",
+              width: "366",
+              height: "127",
+              altText: "Bangara"
+            }
+          })
+          +logup-form()

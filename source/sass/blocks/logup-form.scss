@@ -1,0 +1,79 @@
+.logup-form {
+  display: grid;
+
+  .title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #0092be;
+  }
+
+  form {
+    margin-top: 50px;
+
+    @include vp-767 {
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__passwords {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 1vw, 60px);
+
+    @include vp-767 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__controls {
+    display: grid;
+  }
+
+  &__submit {
+    margin-top: 70px;
+    justify-self: right;
+    grid-column: 2;
+    padding: 15px 35px;
+    border-radius: 10px;
+
+    @include vp-767 {
+      grid-column: auto;
+      justify-self: center;
+    }
+  }
+
+  &__note {
+    margin-top: 70px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #9f9f9f;
+  }
+
+  .link {
+    color: #1ea8e7;
+    transition: opacity $trans-default;
+
+    @include hover-focus {
+      color: #1ea8e7;
+      opacity: 0.6;
+    }
+  }
+
+  &__account-link {
+    font: inherit;
+  }
+
+  .custom-checkbox__icon::before {
+    border-color: #1ea8e7;
+  }
+}

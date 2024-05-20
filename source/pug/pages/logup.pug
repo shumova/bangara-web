@@ -1,0 +1,16 @@
+extends ../components/base/layout
+
+block variables
+  -
+    const
+          title = "Bangara — бизнес развивается с нами",
+          wrapperMods = "",
+          hasHeader = false,
+          headerMods = "",
+          hasFooter = false,
+          footerMods = "",
+          currentUrl = "logup.html"
+
+block main
+  main
+    +logup()

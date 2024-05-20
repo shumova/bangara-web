@@ -12,7 +12,8 @@ $color-base-accent: #ff7f5c;
 
 /* Heading */
 
-$color-base-success: #01966b; /* Цвет успеха */
+$color-base-success: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+; /* Цвет успеха */
 $color-base-alert: #ff0000; /* Цвет ошибки */
 // $color-base-warning: #f38b00; /* Цвет предупреждения */
 // $color-base-caution: #f2c94c; /* Цвет осторожности */

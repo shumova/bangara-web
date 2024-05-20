@@ -1,7 +1,17 @@
 .blockquote {
-  padding: 56px 0 40px;
+  padding: 0 0 40px;
   background-color: #fbfaff;
-
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 125px;
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background-color: #e7daed;
+  } 
   figure {
     max-width: 1050px;
     margin: 0 auto;

@@ -26,10 +26,10 @@
   }
 
   .title {
-    font-weight: 900;
-    font-size: 60px;
-    line-height: 1;
-    color: #111928;
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 134%;
+    color: #1a202c;
 
     @include vp-767 {
       font-size: 30px;
@@ -38,10 +38,19 @@
 
   .text {
     margin-top: 25px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    color: rgba(0, 0, 0, 0.55);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 200%;
+    color:#4a5568;
+  }
+
+  .button {
+    width: 179px;
+    height: 52px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;  
+    color: #fafafa;
   }
 
   .begin-form {

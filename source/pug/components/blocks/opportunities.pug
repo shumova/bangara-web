@@ -3,60 +3,34 @@ mixin opportunities(props = {})
     const
           list = [
             {
-              title: "Финансовые документы",
+              title: "Надежность",
               content: [
-                "Согласование счетов, актов, отгрузок.",
-                "Контроль оплат и&nbsp;графики платежей"
+                "Мы стоим на страже ваших интересов, предоставляя гарантии высочайшего уровня. Ваша безопасность — наш приоритет"
               ],
-              img: "documents",
-              background: "opportunities-bg-1",
-              link: "#"
+              img: "ShieldPlus",
             },
             {
-              title: "Документооборот",
+              title: "Инновации",
               content: [
-                "Автоматизация соглаосваний договоров, документов и&nbsp;контрагентов"
+                "Мы внедряем последние технологии и передовые практики в наши услуги, чтобы ваш бизнес был на переднем крае развития"
               ],
-              img: "circulation",
-              background: "opportunities-bg-2",
-              link: "#"
+              img: "users",
             },
             {
-              title: "CRM и&nbsp;продажи",
+              title: "Индивидуальный Подход",
               content: [
-                "Автоматизация продаж, маркетинг взаимоотношений"
+                "Мы понимаем, что каждый клиент уникален. Мы разрабатываем решения, соответствующие именно вашим потребностям, и стремимся создать индивидуальный опыт сотрудничества"
               ],
-              img: "crm",
-              background: "opportunities-bg-3",
-              link: "#"
+              img: "UserPlus",
             },
             {
-              title: "Заявки и&nbsp;сервис",
+              title: "Скорость",
               content: [
-                "Автоматизация обработки заявок сотрудников, клиентов и&nbsp;партнеров"
+                "99% заявок обрабатываются системой в течении 15 минут"
               ],
-              img: "applications",
-              background: "opportunities-bg-4",
-              link: "#"
+              img: "Speedometer",
             },
-            {
-              title: "Управление закупками",
-              content: [
-                "Автоматизация закупочных и&nbsp;тендерных процедур в&nbsp;компании"
-              ],
-              img: "purchases",
-              background: "opportunities-bg-5",
-              link: "#"
-            },
-            {
-              title: "Электронный архив",
-              content: [
-                "Автоматизация хранения скан-копий и&nbsp;оригиналов"
-              ],
-              img: "archive",
-              background: "opportunities-bg-6",
-              link: "#"
-            }
+        
           ]
 
 
@@ -67,46 +41,36 @@ mixin opportunities(props = {})
         .opportunities__content
           +title({
             tag: "h2",
-            text: "Наши возможности"
+            text: "Приемущества"
           }).opportunities__title
-          .opportunities__list
-            each item in list
-              .opportunities__item.opportunity-card
-                .opportunity-card__decor(aria-hidden="true")
-                  +picture({
-                    path: "content/opportunities",
-                    name: item.background,
-                    format: "jpg",
-                    width: "640",
-                    height: "295"
-                  })
-                .opportunity-card__content
-                  .opportunity-card__img
-                     +picture({
-                      path: "content/opportunities",
-                      name: item.img,
-                      format: "jpg",
-                      width: "52",
-                      height: "52"
+          .opportunities__row
+            .opportunities__why
+              +title({
+                tag: "span",
+                text:"Почему Бангара?"
+              })
+              +text({
+                content: ['Мы гордимся тем, что предоставляем вам не просто банковские гарантии, но и решения, спроектированные поддерживать ваш рост и обеспечивать устойчивость в динамичном мире бизнеса.']
+              })
+            .opportunities__list
+              each item in list
+                .opportunities__item.opportunity-card
+                  .opportunity-card__content
+                    .opportunity-card__img
+                      +picture({
+                        path: "content",
+                        name: item.img,
+                        format: "png",
+                        width: "50",
+                        height: "50"
+                      })
+                    +title({
+                      tag: "span",
+                      text: item.title
                     })
-                  +title({
-                    tag: "span",
-                    text: item.title
-                  })
-                  +text({
-                    content: item.content
-                  })
-                  +link({
-                    text: "Детали",
-                    href: "error.html",
-                    icon: {
-                      name: "icon-forward",
-                      width: 16,
-                      height: 17
-                    },
-                    modifiers: ["view-normal"]
-                  })
-
+                    +text({
+                      content: item.content
+                    })
 
 
 

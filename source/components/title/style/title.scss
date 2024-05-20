@@ -17,4 +17,17 @@
     line-height: 1.2;
     letter-spacing: -0.03em;
   }
+
+  &-gradient {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    &--pink {
+      background-image: linear-gradient(180deg, #de4396 0%, rgba(13, 28, 159, 0) 100%);
+
+    } 
+    &--blue {
+      background-image: linear-gradient(225deg, #f7666f 0%, #406aff 100%);
+    }
+  }
 }

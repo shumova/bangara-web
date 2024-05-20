@@ -1,5 +1,5 @@
-mixin login(props = {})
-  .login.decorated-page
+mixin logup(props = {})
+  .logup.decorated-page
     .decorated-page__decor
       +picture({
         path: "content/bangara",
@@ -22,9 +22,9 @@ mixin login(props = {})
           text: "Главная",
           href: "index.html",
           modifiers: ["view-clear"]
-        }).login__home-btn
+        }).logup__home-btn
       .decorated-page__content
-        .login__content
+        .logup__content
           +logo({
             isIndex: false,
             img: {
@@ -36,4 +36,4 @@ mixin login(props = {})
               altText: "Bangara"
             }
           })
-          +login-form()
+          +logup-form()

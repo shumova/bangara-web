@@ -6,8 +6,29 @@
   width: 100%;
 
   label {
+    position: relative;
     display: flex;
     width: 100%;
+  }
+
+  &--labeled {
+    display: grid;
+
+    .custom-input__label {
+      margin-bottom: 5px;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 29px;
+      color: #9A9A9A;
+    }
+
+    label {
+      display: grid;
+    }
+
+    input {
+      align-self: end;
+    }
   }
 
   &--ghost {
@@ -26,19 +47,32 @@
   }
 
   &--base {
+    position: relative;
+
+    svg {
+      position: absolute;
+      z-index: 1;
+      bottom: 16px;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+    }
+
     input,
     textarea {
-      padding: 18px 15px;
+      padding: 17px  20px 14px 45px;
+      font: inherit;
       color: inherit;
-      background-color: transparent;
-      border: 1px solid #a7acc1;
-      border-radius: 12px;
+      border: none;
+      background-color: #f8f8f8;
+      border: 1px solid transparent;
+      border-radius: 10px;
 
       &::placeholder {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #91929E;
+        font-size: 20px;
+        line-height: 27px;
+        color: #6C757D;
       }
     }
   }
@@ -46,6 +80,7 @@
   input,
   textarea {
     flex-grow: 1;
+    width: 100%;
     outline: none;
     transition: opacity $trans-default, border-color $trans-default;
     transform: translateZ(0); // для Safari, где смещается текст при hover

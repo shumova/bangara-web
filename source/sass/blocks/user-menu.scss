@@ -5,4 +5,10 @@
   justify-content: flex-end;
   margin: 0;
   padding: 0;
+
+  &__begin-btn {
+    @include vp-1023 {
+      font-size: inherit;
+    }
+  }
 }

@@ -2,7 +2,7 @@
 
 .button {
   // Базовые значения
-  --padding: #{$control-space-m};
+  --padding: 15px 25px;
   --font-weight: #{$font-weight-text-regular};
   --font-size: #{$control-text-size-m};
   --line-height: #{$line-height-text-m};
@@ -133,14 +133,33 @@
       --background-color-active: var(--color-control-bg-secondary-active);
     }
 
-    &-accent {
-      --color: var(--color-control-typo-accent);
-      --color-hover: var(--color-control-typo-accent-hover);
-      --color-active: var(--color-control-typo-accent-active);
+    &-cta {
+      --color: var(--color-control-typo-cta);
+      --color-hover: var(--color-control-typo-cta-hover);
+      --color-active: var(--color-control-typo-cta-active);
 
-      --background-color: var(--color-control-bg-accent);
-      --background-color-hover: var(--color-control-bg-accent-hover);
-      --background-color-active: var(--color-control-bg-accent-active);
+      --background-color: var(--color-control-bg-cta);
+      --background-color-hover: var(--color-control-bg-cta-hover);
+      --background-color-active: var(--color-control-bg-cta-active);
+
+      --font-weight: 400;
+      --font-size: 25px;
+      --line-height: 1;
+    }
+
+    &-clear {
+      --color: #ffffff;
+      --color-hover: #ffffff;
+      --color-active: #ffffff;
+
+      --background-color: transparent;
+      --background-color-hover: transparent;
+      --background-color-active: transparent;
+
+      --border-width: 1px;
+      --border-style: solid;
+      --border-color: #ffffff;
+      --border-radius: 30px;
     }
   }
 
@@ -166,6 +185,51 @@
 
       &-xs {
         --border-radius: #{$space-xs};
+      }
+    }
+  }
+
+  &--uppercase {
+    --text-transform: uppercase;
+  }
+
+  &--weight {
+    &-600 {
+      --font-weight: 600;
+    }
+
+    &-700 {
+      --font-weight: 700;
+    }
+  }
+
+  &--gradient {
+    position: relative;
+    background-image: linear-gradient(225deg, #6675F7 0%, #57007B 100%);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+
+      background-image: linear-gradient(225deg, #57007B 0%, #6675F7 100%);
+      border-radius: var(--border-radius);
+
+      opacity: 0;
+      transition: opacity $trans-default;
+    }
+
+    .button__text {
+      z-index: 1;
+      color: #fafafa;
+    }
+
+    @include hover-focus {
+      &::before {
+        opacity: 1;
       }
     }
   }

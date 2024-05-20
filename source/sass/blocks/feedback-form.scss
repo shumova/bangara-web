@@ -1,4 +1,14 @@
 .feedback-form {
+  .custom-input {
+    input {
+      font-weight: 900;
+    }
+
+    input::placeholder {
+      color: #bbb5e0;
+    }
+  }
+
   &__item {
     margin-top: 24px;
 

@@ -1,4 +1,4 @@
-.login-form {
+.logup-form {
   display: grid;
 
   .title {
@@ -24,37 +24,22 @@
     }
   }
 
-  &__controls {
+  &__passwords {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px;
-    margin-top: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 1vw, 60px);
 
     @include vp-767 {
       grid-template-columns: minmax(0, 1fr);
     }
   }
 
-  &__forget-link {
-    justify-self: left;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  .error-message {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: transparent;
-    transition: color $trans-default;
-  }
-
-  &__item.is-invalid ~ .login-form__controls .error-message {
-    color: #ff0000;
+  &__controls {
+    display: grid;
   }
 
   &__submit {
+    margin-top: 70px;
     justify-self: right;
     grid-column: 2;
     padding: 15px 35px;
@@ -86,5 +71,9 @@
 
   &__account-link {
     font: inherit;
+  }
+
+  .custom-checkbox__icon::before {
+    border-color: #1ea8e7;
   }
 }

@@ -127,6 +127,25 @@ $color-base-normal: #308fff; /* Цвет нейтральный */
   --color-control-typo-success-hover: #{$color-base-success};
   --color-control-typo-success-active: #{$color-base-success};
 
+  // gray
+  --color-control-typo-gray: #4a5568;
+  --color-control-typo-gray-hover: #4a5568;
+  --color-control-typo-gray-active: #4a5568;
+
+  --color-control-decoration-gray: underline 2px solid transparent;
+  --color-control-decoration-gray-hover: underline 2px solid #4a5568;
+  --color-control-decoration-gray-active: underline 2px solid #4a5568;
+
+  // cta
+  --color-control-typo-cta: #ffffff;
+  --color-control-typo-cta-hover: #ffffff;
+  --color-control-typo-cta-active: #ffffff;
+
+  --color-control-bg-cta: #1ea8e7;
+  --color-control-bg-cta-hover: #{color.adjust(#1ea8e7, $lightness: +9%)};
+  --color-control-bg-cta-active: #{color.adjust(#1ea8e7, $lightness: +9%)};
+
+
 
 //   // Secondary
 //   --color-control-bg-secondary: #{$color-base-essential};

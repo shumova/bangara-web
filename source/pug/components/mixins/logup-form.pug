@@ -1,0 +1,32 @@
+mixin logup-form(data = {})
+  .logup-form(data-validate, data-callback="feedback")&attributes(attributes)
+    +title({
+      tag: "h1",
+      text: "5 минут и Вы Агент!"
+    })
+    +text({
+      content: [
+        "Пожалуйста, используйте ваши учетные данные для входа"
+      ]
+    }).logup-form__note
+    form(action="#" method="post")
+      +custom-input({inputLabel: "ФИО", inputPlaceholder: "ФИО", inputName: "name", icon: {name: "icon-name", width: 20, height: 20}}).custom-input--base.logup-form__item(data-validate-type="text", data-required)
+      +custom-input({inputLabel: "Email", inputPlaceholder: "Email", inputName: "email", icon: {name: "icon-email", width: 20, height: 20}}).custom-input--base.logup-form__item(data-validate-type="email", data-required)
+      +custom-input({inputLabel: "Телефон", inputPlaceholder: "Телефон", inputName: "phone", icon: {name: "icon-phone", width: 20, height: 20}}).custom-input--base.logup-form__item(data-validate-type="phone", data-required)
+      .logup-form__item.logup-form__passwords
+        +custom-input({inputType: "password", inputLabel: "Придумайте пароль", inputPlaceholder: "Пароль", inputName: "password", icon: {name: "icon-password", width: 20, height: 20}, modifiers: ["labeled"]}).custom-input--base(data-required)
+        +custom-input({inputType: "password", inputLabel: "Повторите пароль", inputPlaceholder: "Пароль", inputName: "password-repeat", icon: {name: "icon-password", width: 20, height: 20}, modifiers: ["labeled"]}).custom-input--base(data-required)
+
+      +custom-checkbox({inputLabel: "Согласен на&nbsp;обработку", inputName: "user-agreement", inputId: "id-order-agreement", inputChecked: false}).feedback-form__item(data-validate-type="checkbox", data-required)
+        +link({
+          href: "agreement.html",
+          text: "персональных&nbsp;данных",
+          classMods: ["underlined"],
+        })
+
+      .logup-form__controls
+        +button({
+          text: "Зарегистрироваться",
+          type: "submit",
+          modifiers: ["view-cta"]
+        }).logup-form__submit

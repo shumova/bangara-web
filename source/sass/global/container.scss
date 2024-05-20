@@ -6,6 +6,10 @@
   margin: 0 auto;
   padding: 0 var(--container-offset);
 
+  &--wide {
+    max-width: calc(1920px + var(--container-offset));
+  }
+
   @include vp-1439 {
     --container-offset: #{$offset-container-tablet};
   }

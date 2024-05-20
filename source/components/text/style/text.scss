@@ -6,6 +6,10 @@
     padding: 0;
   }
 
+  p + p {
+    margin-top: var(--text-space);
+  }
+
   &--medium {
     --text-space: #{$space-m};
 

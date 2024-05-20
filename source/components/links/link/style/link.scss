@@ -110,5 +110,20 @@
       --color-hover: var(--color-control-typo-success-hover);
       --color-active: var(--color-control-typo-success-active);
     }
+
+    &-gray {
+      --color: var(--color-control-typo-gray);
+      --color-hover: var(--color-control-typo-gray-hover);
+      --color-active: var(--color-control-typo-gray-hover);
+
+      --text-decoration: var(--color-control-decoration-gray);
+      --text-decoration-hover: var(--color-control-decoration-gray-hover);
+      --text-decoration-active: var(--color-control-decoration-gray-active);
+
+      font-weight: 700;
+      text-underline-offset: 0.4em;
+      text-decoration-skip-ink: none;
+      text-decoration-skip: none;
+    }
   }
 }

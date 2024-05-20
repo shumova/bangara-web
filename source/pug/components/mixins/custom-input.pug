@@ -9,9 +9,16 @@ mixin custom-input(options = {})
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
   - const inputMax = options.inputMax ? options.inputMax : false
   - const inputMin = options.inputMin ? options.inputMin : false
+  - const icon = options.icon
+  - const modifiers = options.modifiers ? options.modifiers.map((mod) => "custom-input--" + mod) : [];
 
-  .custom-input&attributes(attributes)
+  .custom-input(class=[...modifiers])&attributes(attributes)
     label
+      if icon
+        +icon(icon.name, icon.width, icon.height)
       if inputLabel
-        span.visually-hidden!=inputLabel
+        if modifiers.includes('custom-input--labeled')
+          span.custom-input__label!=inputLabel
+        else
+          span.visually-hidden!=inputLabel
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, max=inputMax, min=inputMin)

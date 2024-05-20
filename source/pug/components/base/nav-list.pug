@@ -5,10 +5,12 @@ mixin nav-list(props = {})
     each link in links
       - const isActive = currentUrl === link.href
       - const tag = isActive ? "span" : "a"
-      li.nav-list__item
-        +link({
-          tag: tag,
-          href: link.href,
-          text: link.text,
-          isActive
-        }).nav-list__link(class=[isActive && "is-active"])
+      if (!isActive)
+        li.nav-list__item
+          +link({
+            tag: tag,
+            href: link.href,
+            text: link.text,
+            isActive,
+            modifiers: ["view-gray"]
+          }).nav-list__link(class=[isActive && "is-active"])

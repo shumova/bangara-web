@@ -4,6 +4,8 @@
   background-color: $color-base-project;
   color: var(--color-typo-essential);
   overflow: hidden;
+  background: linear-gradient(180deg, #3734a9 0%, #57007b 100%);
+
 
   &__decor {
     position: absolute;
@@ -61,14 +63,17 @@
     font-size: 16px;
   }
 
-  &__footer-link {
-    --text-decoration: underline;
+  &__link {
     --color-hover: #{$color-base-accent};
     --color-active: #{$color-base-accent};
 
     margin-top: 5px;
     text-underline-offset: 2px;
     text-decoration-skip-ink: none;
+
+    &--underlined {
+      --text-decoration: underline;
+    }
   }
 
   .logo {
@@ -88,7 +93,7 @@
     }
   }
 
-  .text,
+  .contacts,
   &__address {
     font-weight: 600;
     font-size: 18px;
@@ -96,7 +101,9 @@
     letter-spacing: -0.02em;
   }
 
-  .text {
+  .contacts {
+    display: grid;
+    justify-items: left;
     margin-top: 20px;
 
     span {
@@ -105,7 +112,7 @@
   }
 
   &__address {
-    margin-top: 5px;
+    margin-top: 10px;
     font-style: normal;
   }
 

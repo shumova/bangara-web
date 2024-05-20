@@ -3,7 +3,7 @@ mixin footer(footerMods)
     const params = {
       content: {
         title: {
-          text: "Обсудить идею или проект",
+          text: "Готовы приступить?",
           modifiers: ["medium" ]
         },
         //- text: {
@@ -40,9 +40,19 @@ mixin footer(footerMods)
       .footer__inner-wrapper
         .footer__content
           +title(params.content.title)
-          .text
-            span Вы всегда можете связаться с&nbsp;нашим менеджером или оставить заявку
-            span +7 (925) - 001-00-24
+          .contacts
+            +link({
+              href: "tel:+7 (925) - 001-00-24",
+              text: "+7 (925) - 001-00-24"
+            }).footer__link
+            +link({
+              href: "mailto:info@bangara.ru",
+              text: "info@bangara.ru"
+            }).footer__link
+            +link({
+              href: "agreement.html",
+              text: "Документы"
+            }).footer__link.footer__link--underlined
           address.footer__address 109028, г. Москва, вн.тер.г. муниципальный округ Басманный, пер. Хохловский, д.&nbsp;15, помещ. 3п
         +feedback-form()
         .footer__footer
@@ -52,4 +62,4 @@ mixin footer(footerMods)
             +link({
               href: "agreement.html",
               text: "Политика обработки персональных данных"
-            }).footer__footer-link
+            }).footer__link.footer__link--underlined

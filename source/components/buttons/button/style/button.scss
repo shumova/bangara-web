@@ -169,4 +169,14 @@
       }
     }
   }
+
+  &--uppercase {
+    --text-transform: uppercase;
+  }
+
+  &--weight {
+    &-700 {
+      --font-weight: 700;
+    }
+  }
 }

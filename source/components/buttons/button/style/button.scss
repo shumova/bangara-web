@@ -161,6 +161,16 @@
       --border-color: #ffffff;
       --border-radius: 30px;
     }
+
+    &-accent {
+      --color: var(--color-control-typo-accent);
+      --color-hover: var(--color-control-typo-accent-hover);
+      --color-active: var(--color-control-typo-accent-active);
+
+      --background-color: var(--color-control-bg-accent);
+      --background-color-hover: var(--color-control-bg-accent-hover);
+      --background-color-active: var(--color-control-bg-accent-active);
+    }
   }
 
   &--color {

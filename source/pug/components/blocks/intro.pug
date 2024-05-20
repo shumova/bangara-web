@@ -5,7 +5,7 @@ mixin intro(props = {})
         .intro__content
           +title({
             tag: "h1",
-            text: "Ваш <span class='title-gradient title-gradient--pink'>Надежный</span> партенер  в <span class='title-gradient title-gradient--blue'>Банковских гарантиях</span>"
+            text: "Ваш <span class='title-gradient title-gradient--pink'>Надежный</span> партнер  в <span class='title-gradient title-gradient--blue'>Банковских гарантиях</span>"
           })
           +text({
             content: [
@@ -15,7 +15,8 @@ mixin intro(props = {})
           +button({
             text: "Присоединиться",
             type: "button",
-            modifiers: ["view-secondary"]
+            modifiers: ["view-secondary"],
+            href: "logup.html"
           }).login-form__submit
         .intro__img
           +picture({
@@ -26,5 +27,5 @@ mixin intro(props = {})
             height: "455",
             altText: "Рабочий процесс."
           })
- 
+
 

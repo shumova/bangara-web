@@ -84,6 +84,65 @@
   }
 
   &--view {
+    &-purple {
+      position: relative;
+
+      --color: #4A5568;
+      --color-hover: #57007B;
+      --color-active: #57007B;
+
+      &.is-active {
+        &::before {
+          background-color: #57007B;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: calc(100% + 2px);
+        left: 0;
+        width: 45px;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color $trans-default;
+      }
+
+      @include hover-focus {
+        &::before {
+          background-color: #57007B;
+        }
+      }
+
+      font-weight: 700;
+      text-underline-offset: 0.4em;
+      text-decoration-skip-ink: none;
+      text-decoration-skip: none;
+
+      @include vp-1023 {
+        --color-hover: #4A5568;
+        --color-active: #4A5568;
+
+        &::before {
+          display: none;
+        }
+
+        --text-decoration: var(--color-control-decoration-secondary);
+        --text-decoration-hover: var(--color-control-decoration-secondary-hover);
+        --text-decoration-active: var(--color-control-decoration-secondary-active);
+
+        text-underline-offset: 0.4em;
+        text-decoration-skip-ink: none;
+        text-decoration-skip: none;
+
+        @include hover-focus {
+          &::before {
+            background-color: var(--color-control-decoration-secondary-active);
+          }
+        }
+      }
+    }
+
     &-secondary {
       --color: var(--color-control-typo-secondary);
       --color-hover: var(--color-control-typo-secondary-hover);

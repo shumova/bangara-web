@@ -25,6 +25,32 @@ mixin header(headerMods, currentUrl)
         }
       },
       pageNav: {
+        subnavList: {
+          isSubnavList: true,
+          currentUrl,
+          links: [
+            {
+              href: "index.html#about",
+              text: "Банковские гарантии"
+            },
+            {
+              href: "index.html#products",
+              text: "Преимущества"
+            },
+            {
+              href: "agent.html",
+              text: "Агентам"
+            },
+            {
+              href: "partner.html",
+              text: "Партнерам"
+            },
+            {
+              href: "index.html#features",
+              text: "Новости"
+            },
+          ]
+        },
         navList: {
           currentUrl,
           links: [

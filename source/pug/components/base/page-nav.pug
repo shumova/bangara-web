@@ -3,3 +3,5 @@ mixin page-nav(params = {})
   nav.page-nav&attributes(attributes)
     .page-nav__content
       +nav-list(params.navList).page-nav__list
+    .page-nav__subnav.subnav
+      +nav-list(params.subnavList).subnav__list

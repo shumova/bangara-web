@@ -1,16 +1,26 @@
 mixin nav-list(props = {})
-  - const {links, currentUrl} = props
+  - const {links, currentUrl, isSubnavList} = props
 
   ul.nav-list&attributes(attributes)
     each link in links
       - const isActive = currentUrl === link.href
       - const tag = isActive ? "span" : "a"
-      if (!isActive)
+      if (isSubnavList)
         li.nav-list__item
           +link({
             tag: tag,
             href: link.href,
             text: link.text,
             isActive,
-            modifiers: ["view-gray"]
+            modifiers: ["view-purple"]
           }).nav-list__link(class=[isActive && "is-active"])
+      else
+        if (!isActive)
+          li.nav-list__item
+            +link({
+              tag: tag,
+              href: link.href,
+              text: link.text,
+              isActive,
+              modifiers: ["view-gray"]
+            }).nav-list__link(class=[isActive && "is-active"])

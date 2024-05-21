@@ -1,0 +1,21 @@
+.subnav {
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  background-color: #F9F9FF;
+
+  @include vp-1023 {
+    position: static;
+    margin-top: 45px;
+    padding: 0;
+    background-color: transparent;
+
+    .subnav__list {
+      display: grid;
+      gap: 45px;
+    }
+  }
+}

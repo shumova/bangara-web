@@ -57,10 +57,11 @@
     display: inline;
     text-underline-offset: 2px;
     text-decoration-skip-ink: none;
+    transition: none;
   }
 
   .link__text {
-    transition: opacity $trans-default; // для обнуления transition color
+    transition: none; // для обнуления transition color
   }
 
   &__icon {
